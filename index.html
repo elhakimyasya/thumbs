@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thumbnail Generator | EL Creative Academy</title>
+	<meta name="viewport" content="height=device-height, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="input">
+		<select id='category' onChange="check(this);">
+			<option disabled="disabled" selected="selected">Select Category</option>
+			<option>EL Creative Official</option>
+
+			<option>Artificial Intelligence</option>
+			<option>Desktop</option>
+			<option>Graphic Design</option>
+			<option>Internet & Networking</option>
+			<option>Mobile</option>
+			<option>Programming</option>
+			<option>SEO</option>
+			<option>Web Development</option>
+			<option disabled="disabled"></option>
+			<option>AngularJS</option>
+			<option>Arduino</option>
+			<option>Android</option>
+			<option>Apple</option>
+			<option>Blogger</option>
+			<option>C++</option>
+			<option>CSS</option>
+			<option>Chrome</option>
+			<option>Firefox</option>
+			<option>Git</option>
+			<option>Google</option>
+			<option>HTML</option>
+			<option>iOS</option>
+			<option>Java</option>
+			<option>JavaScript</option>
+			<option>jQuery</option>
+			<option>Kali Linux</option>
+			<option>Linux</option>
+			<option>MacOS</option>
+			<option>Microsoft</option>
+			<option>Python</option>
+			<option>PHP</option>
+			<option>Perl</option>
+			<option>Ruby</option>
+			<option>Ruby on Rails</option>
+			<option>Windows</option>
+			<option>XML</option>
+		</select>
+		<select id='bg-color'>
+			<option disabled="disabled" selected="selected">Select Background</option>
+			<option>Yellow</option>
+			<option>Amber</option>
+			<option>Orange</option>
+			<option>Deep Orange</option>
+			<option>Brown</option>
+			<option>Grey</option>
+			<option>Blue Grey</option>
+			<option>Lime</option>
+			<option>Light Green</option>
+			<option>Green</option>
+			<option>Red</option>
+			<option>Pink</option>
+			<option>Purple</option>
+			<option>Deep Purple</option>
+			<option>Indigo</option>
+			<option>Blue</option>
+			<option>Light Blue</option>
+			<option>Cyan</option>
+			<option>Teal</option>
+		</select>
+		<select id='bg-styles'>
+			<option disabled="disabled" selected="selected">Select Pattern</option>
+			<option value="sty1">Background 1</option>
+			<option value="sty2">Background 2</option>
+			<option value="sty3">Background 3</option>
+			<option value="sty4">Background 4</option>
+			<option value="sty5">Background 5</option>
+			<option value="sty6">Background 6</option>
+		</select>
+		<br/>
+		<input type="text" id="title1" placeholder="Title">
+		<br/>
+		<input type="text" id="author" placeholder="Author">
+	</div>
+	<div class="background" id="background">
+		<div class="content-container">
+			<div class="header-container">
+				<div class="blocks"></div>
+				<div class="author-name" id="categories"></div>
+			</div>
+			<div class="separate">
+				<div id="content-title1" class="content-title">Title</div>
+			</div>
+			<div class="footer-container">
+				<div class="author-name" id="author-name">@Author</div>
+				<div class="elc">
+					EL Creative Academy
+					<div class="img-logo">
+						<img src="./images/logo.png">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+#category, #bg-color, #bg-styles {
+	width: calc(99%/3);
+}
+#input input {
+	width: 99.2%;
+	height: 25px;
+}
+#input input, #input select {
+	margin: 1px 0;
+	height: 25px;
+	line-height: 25px;
+}
+#input {
+	max-width: 900px;
+	width: 100%;
+	text-align: center;
+}
+.background {
+	user-select: none;
+	width: 900px;
+	height: 600px;
+	background: #1a73e8;
+	color: #fff;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.background::after {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	opacity: .05;
+	background-size: 50% !important;
+}
+.background.sty1:after {
+	background: url(images/1.jpg);
+}
+.background.sty2:after {
+	background: url(images/2.jpg);
+}
+.background.sty3:after {
+	background: url(images/3.jpg);
+}
+.background.sty4:after {
+	background: url(images/4.jpg);
+}
+.background.sty5:after {
+	background: url(images/5.jpg);
+}
+.background.sty6:after {
+	background: url(images/6.jpg);
+}
+
+.img-logo img {
+	width: 45px;
+	height: 45px;
+	margin-left: 15px;
+}
+.elc {
+	display: flex;
+	align-items: center;
+}
+.content-container {
+	display: flex;
+	padding: 50px;
+	flex-direction: column;
+	height: 100%;
+	max-height: 500px;
+}
+.content-title {
+	font-size: 50px;
+	font-family: 'Product Sans', sans-serif;
+	font-weight: 600;
+	padding: 0 140px;
+	text-shadow: 4px 2px 5px rgba(0,0,0,0.2);
+	max-height: 240px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.content-container .header-container {
+	justify-content: flex-start;
+}
+.footer-container, .header-container {
+	padding-top: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-family: 'Product Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+	text-shadow: 4px 2px 5px rgba(0,0,0,0.2);
+	align-items: center;
+	z-index: 999;
+}
+.header-container {
+	padding-top: 0;
+	padding-bottom: 50px;
+	justify-content: left;
+}
+#categories {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+}
+.blocks {
+	width: 60px;
+	height: 10px;
+	display: inline-block;
+	background: #fff;
+	margin-right: 15px;
+}
+.separate {
+	margin: 50px 0;
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
