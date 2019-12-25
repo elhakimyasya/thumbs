@@ -62,6 +62,21 @@ body {
 .background.sty6:after {
 	background: url(images/6.jpg);
 }
+.background.sty7:after {
+	background: url(images/7.jpg);
+}
+.background.sty8:after {
+	background: url(images/8.jpg);
+}
+.background.sty9:after {
+	background: url(images/9.jpg);
+}
+.background.sty10:after {
+	background: url(images/10.jpg);
+}
+.background.sty11:after {
+	background: url(images/11.jpg);
+}
 
 .img-logo img {
 	width: 45px;
