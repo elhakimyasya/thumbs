@@ -12,9 +12,9 @@
 			function elclist(json) {
 				var tag = "";
 				for (var i = 0; i < json.feed.category.length; i++) {
-					tag +=  "<select id='category' onChange='check(this);'>" + json.feed.category[i].term + "</select>";
+					tag +=  "<option>" + json.feed.category[i].term + "</option>";
 				}
-				var list = "<option>" + tag + "</option>";
+				var list = "<select id='category' onChange='check(this);'>" + tag + "</select>";
 				
 				document.write(list); 
 			}
