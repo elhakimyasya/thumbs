@@ -7,6 +7,7 @@
 </head>
 <body>
 	<div id="input">
+		<script type="text/javascript" src="https://www.elcreativeacademy.com/feeds/posts/default?alt=json-in-script&callback=mbtlist"></script>
 		<select id='category' onChange="check(this);">
 			<option disabled="disabled" selected="selected">Select Category</option>
 			<option>EL Creative Official</option>
@@ -121,5 +122,16 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="script.js"></script>
+	<script>
+		function elclist(json) {
+			var tag = "";
+			for (var i = 0; i < json.feed.category.length; i++) {
+				tag +=  "<select id='category' onChange='check(this);'>" + json.feed.category[i].term + "</select>";
+			}
+			var list = "<option>" + tag + "</option>";
+			
+			document.write(list); 
+		}
+	</script>
 </body>
 </html>
