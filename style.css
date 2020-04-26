@@ -98,10 +98,10 @@ body {
 	background-size: 50% !important;
 }
 .background.sty1:after {
-	background: url(images/1.jpg);
+	background: url(images/1.png);
 }
 .background.sty2:after {
-	background: url(images/2.jpg);
+	background: url(images/2.png);
 }
 .background.sty3:after {
 	background: url(images/3.jpg);
