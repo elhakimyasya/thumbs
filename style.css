@@ -84,6 +84,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	font-family: Quicksand, 'Google Sans', 'Segoe UI', sans-serif;
 }
 
 .background::after {
