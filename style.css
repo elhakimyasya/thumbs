@@ -133,6 +133,9 @@ body {
 .background.sty12:after {
 	background: url(images/12.png);
 }
+.background.sty13:after {
+	background: url(images/13.png);
+}
 
 .img-logo img {
 	width: 45px;
