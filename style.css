@@ -94,7 +94,7 @@ body {
 	right: 0;
 	bottom: 0;
 	z-index: -1;
-	opacity: .05;
+	opacity: .10;
 	background-size: 50% !important;
 }
 .background.sty1:after {
@@ -113,22 +113,25 @@ body {
 	background: url(images/5.png);
 }
 .background.sty6:after {
-	background: url(images/6.jpg);
+	background: url(images/6.png);
 }
 .background.sty7:after {
-	background: url(images/7.jpg);
+	background: url(images/7.png);
 }
 .background.sty8:after {
-	background: url(images/8.jpg);
+	background: url(images/8.png);
 }
 .background.sty9:after {
-	background: url(images/9.jpg);
+	background: url(images/9.png);
 }
 .background.sty10:after {
-	background: url(images/10.jpg);
+	background: url(images/10.png);
 }
 .background.sty11:after {
-	background: url(images/11.jpg);
+	background: url(images/11.png);
+}
+.background.sty12:after {
+	background: url(images/12.png);
 }
 
 .img-logo img {
