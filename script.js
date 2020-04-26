@@ -17,7 +17,7 @@ function check(elem) {
 
 document.getElementById("bg-color").addEventListener("change", function() {
     // Color Index
-    var colors = ["#000", "#ffc107", "#FFAB00", "#FF6D00", "#DD2C00", "#3E2723", "#212121", "#263238", "#AEEA00", "#64DD17", "#00C853", "#D50000", "#C51162", "#AA00FF", "#6200EA", "#304FFE","#2962FF", "#0091EA", "#00B8D4", "#00BFA5"]; 
+    var colors = ["#d32f2f", "#c2185b", "#7b1fa2", "#512da8", "#303f9f", "#1976d2", "#0288d1", "#0097a7", "#00796b", "#388e3c", "#689f38", "#afb42b", "#fbc02d", "#ffa000", "#f57c00", "#e64a19", "#5d4037", "#616161", "#455a64"]; 
     var wth = bgcl.selectedIndex;
     var color = colors[wth];
     document.getElementById('background').style.background = color;
