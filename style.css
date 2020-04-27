@@ -71,14 +71,14 @@
 	text-align: center;
 }
 .background {
-	user-select: none;
 	width: 900px;
 	height: 472.5px;
-	background: #1a73e8;
+	background-color: #1a73e8;
 	color: #fff;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
+	opacity: 1;
 }
 body {
 	display: flex;
@@ -93,54 +93,54 @@ footer.footer a {
 	font-weight: bold;
 }
 
-.background::after {
+.background::before {
 	position: absolute;
 	content: '';
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: -1;
+	z-index: -999;
 	opacity: .10;
 	background-size: 50% !important;
 }
-.background.sty1:after {
+.background.sty1:before {
 	background: url(images/1.png);
 }
-.background.sty2:after {
+.background.sty2:before {
 	background: url(images/2.png);
 }
-.background.sty3:after {
+.background.sty3:before {
 	background: url(images/3.png);
 }
-.background.sty4:after {
+.background.sty4:before {
 	background: url(images/4.png);
 }
-.background.sty5:after {
+.background.sty5:before {
 	background: url(images/5.png);
 }
-.background.sty6:after {
+.background.sty6:before {
 	background: url(images/6.png);
 }
-.background.sty7:after {
+.background.sty7:before {
 	background: url(images/7.png);
 }
-.background.sty8:after {
+.background.sty8:before {
 	background: url(images/8.png);
 }
-.background.sty9:after {
+.background.sty9:before {
 	background: url(images/9.png);
 }
-.background.sty10:after {
+.background.sty10:before {
 	background: url(images/10.png);
 }
-.background.sty11:after {
+.background.sty11:before {
 	background: url(images/11.png);
 }
-.background.sty12:after {
+.background.sty12:before {
 	background: url(images/12.png);
 }
-.background.sty13:after {
+.background.sty13:before {
 	background: url(images/13.png);
 }
 
