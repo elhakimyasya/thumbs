@@ -121,6 +121,7 @@ footer.footer a {
 .btnnn {
 	text-align: center;
 	margin: 20px 0;
+	user-select: none;
 }
 #previewImage {
     position: relative;
