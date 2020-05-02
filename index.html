@@ -5,7 +5,6 @@
 	<title>Thumbnail Generator | EL Creative Academy</title>
 	<meta name="viewport" content="height=device-height, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
 	<div id="input">
@@ -64,6 +63,8 @@
 		<br/>
 		<input type="text" id="author" placeholder="Author">
 	</div>
+
+
 	<div class="background" id="background">
 		<div class="content-container" >
 			<div class="header-container">
@@ -89,11 +90,14 @@
 
 	</div>
 	
-	
-	<input id="btn-Preview-Image" type="button" value="Preview" />  
-	<a id="btn-Convert-Html2Image" href="#"> 
-		Download 
-	</a> 
+	<div class="btnnn">	
+		<a id="btn-Preview-Image" href="#">
+			Preview Image
+		</a>
+		<a id="btn-Convert-Html2Image" href="#"> 
+			Download Image
+		</a> 
+	</div>
 	
 	<div id="previewImage"></div> 
 	
@@ -102,7 +106,6 @@
 	</footer>
 	
 	<script src="jquery-3.5.0.min.js" type="text/javascript"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="html2canvas.min.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function() { 

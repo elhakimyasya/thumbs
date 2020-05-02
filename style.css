@@ -69,7 +69,6 @@
 #input {
 	max-width: 900px;
 	width: 100%;
-	text-align: center;
 }
 .background {
 	width: 900px;
@@ -115,6 +114,10 @@ footer.footer a {
 	bottom: 0;
 	z-index: -999;
 	opacity: .10
+}
+.btnnn {
+	text-align: center;
+	margin: 20px 0;
 }
 #content-container.sty1::after {
 	background: url(images/1.png);
