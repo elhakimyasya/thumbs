@@ -97,6 +97,7 @@ footer.footer a {
 	font-weight: bold;
 }
 #content-container{
+	background-color: rgb(2, 136, 209);
 	position: absolute;
 	content: '';
 	top: 0;
