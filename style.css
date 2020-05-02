@@ -119,6 +119,9 @@ footer.footer a {
 	text-align: center;
 	margin: 20px 0;
 }
+#previewImage {
+    position: relative;
+}
 #content-container.sty1::after {
 	background: url(images/1.png);
 }
