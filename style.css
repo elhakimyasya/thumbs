@@ -91,7 +91,8 @@ body {
 	font-family: Quicksand, 'Google Sans', 'Segoe UI', sans-serif;
 }
 footer.footer {
-	margin: 10px 0;
+	margin: 50px auto;
+	text-align: center;
 }
 footer.footer a {
 	font-weight: bold;
