@@ -99,7 +99,6 @@ footer.footer a {
 	font-weight: bold;
 }
 #content-container{
-	background-color: rgb(2, 136, 209);
 	position: absolute;
 	content: '';
 	top: 0;
@@ -122,6 +121,7 @@ footer.footer a {
 	text-align: center;
 	margin: 20px 0;
 	user-select: none;
+	cursor: pointer;
 }
 #previewImage {
     position: relative;

@@ -82,12 +82,13 @@
 	</div>
 	
 	<div class="btnnn">	
-		<a id="btn-Preview-Image" href="#">
+		<div id="btn-Preview-Image">
 			Preview Image
-		</a>
+		</div>
 	</div>
 	
 	<div id="previewImage"></div> 
+	<div style="font-size: 12px">* Click the preview image button, right click on the image > Save Image As... to save Image</div>
 	
 	<footer class="footer">
 		Thumbnail Generator by Yasya El Hakim - <a href="https://www.elcreativeacademy.com/" target="_blank" alt="EL Creative Academy">EL Creative Academy</a>
@@ -104,14 +105,11 @@
 			$("#btn-Preview-Image").on('click', function() { 
 				html2canvas(element, { 
 					onrendered: function(canvas) { 
-						getCanvas = canvas; 
-
-						var canvasImg = getCanvas.toDataURL("image/jpg");
-						$('#previewImage').html('<img src="'+canvasImg+'" alt="">');
-					} 
+						$("#previewImage").html(canvas); 
+						getCanvas = canvas;						
+					}
 				}); 				
 			}); 
-
 
 			// Begin Here
 			var input = document.getElementById("input"), judul1 = document.getElementById("title1"), author = document.getElementById("author"), category = document.getElementById("category"), bgcl = document.getElementById("bg-color"), backgroundSty = document.getElementById("bg-styles"), categories = document.getElementById("categories");
