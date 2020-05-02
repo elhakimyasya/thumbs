@@ -94,6 +94,7 @@
 		<a id="btn-Preview-Image" href="#">
 			Preview Image
 		</a>
+		 | 
 		<a id="btn-Convert-Html2Image" href="#"> 
 			Download Image
 		</a> 
@@ -109,28 +110,25 @@
 	<script src="html2canvas.min.js" type="text/javascript"></script>
 	<script>
 		$(document).ready(function() { 
-
 			// Global variable 
 			var element = $(".content-container");
+			var getCanvas;  
 
 			$("#btn-Preview-Image").on('click', function() { 
 				html2canvas(element, { 
-					backgroundColor: null, 
 					onrendered: function(canvas) { 
 						$("#previewImage").html(canvas); 
-						var getCanvas = canvas; 
+						getCanvas = canvas; 
 					} 
 				}); 
 			}); 
-			
+
 			$("#btn-Convert-Html2Image").on('click', function() { 
-				var imageData =  getCanvas.toDataURL("image/png"); 
-				
-				// Now browser starts downloading  
-				// it instead of just showing it 
-				var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream"); 
-				
-				$("#btn-Convert-Html2Image").attr("download", "thumbs.png").attr("href", newData);
+				var imgageData = getCanvas.toDataURL("image/png"); 
+
+				var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream"); 
+
+				$("#btn-Convert-Html2Image").attr("download", "elcreativethumbs.png").attr("href", newData); 
 			}); 
 
 			// Begin Here
