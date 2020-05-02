@@ -85,6 +85,9 @@
 		<a id="btn-Preview-Image" href="#">
 			Preview Image
 		</a>
+		<a id="btn-Convert-Html2Image" href="#"> 
+			Download 
+		</a> 
 	</div>
 	
 	<div id="previewImage"></div> 
@@ -108,7 +111,17 @@
 						getCanvas = canvas; 
 					} 
 				}); 
+				var imgageData = getCanvas.toDataURL("image/png"); 
+				var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream"); 
+
+				
 			}); 
+
+			$("#btn-Convert-Html2Image").on('click', function() { 
+					$("#btn-Convert-Html2Image").attr("download", "GeeksForGeeks.png").attr("href", newData); 
+				}); 
+
+			
 
 			// Begin Here
 			var input = document.getElementById("input"), judul1 = document.getElementById("title1"), author = document.getElementById("author"), category = document.getElementById("category"), bgcl = document.getElementById("bg-color"), backgroundSty = document.getElementById("bg-styles"), categories = document.getElementById("categories");
