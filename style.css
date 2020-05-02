@@ -65,6 +65,7 @@
 	margin: 1px 0;
 	height: 25px;
 	line-height: 25px;
+	font-family: inherit;
 }
 #input {
 	max-width: 900px;
@@ -92,6 +93,7 @@ body {
 footer.footer {
 	margin: 50px auto;
 	text-align: center;
+	user-select: none;
 }
 footer.footer a {
 	font-weight: bold;
@@ -122,6 +124,7 @@ footer.footer a {
 }
 #previewImage {
     position: relative;
+    display: block;
 }
 #content-container.sty1::after {
 	background: url(images/1.png);

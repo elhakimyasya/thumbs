@@ -46,11 +46,13 @@
 			<option value="sty12">Background 12</option>
 			<option value="sty13">Background 13</option>
 		</select>
-		<input type="text" id="label1" placeholder="Label">
+		<input type="text" id="label1" placeholder="Post Label">
 		<br/>
-		<input type="text" id="title1" placeholder="Title">
+		<input type="text" id="title1" placeholder="Post Title">
 		<br/>
-		<input type="text" id="author" placeholder="Author">
+		<input type="text" id="author" placeholder="Author Name">
+		<br/> 
+		<input type="text" id="btitle1" placeholder="Blog Title">
 	</div>
 
 
@@ -58,14 +60,14 @@
 		<div class="content-container" >
 			<div class="header-container">
 				<div class="blocks" id="blocks"></div>
-				<div class="author-name" id="categories">Label</div>
+				<div class="author-name" id="categories">Post Label</div>
 			</div>
 			<div class="separate">
-				<div id="content-title1" class="content-title">Title</div>
+				<div id="content-title1" class="content-title">Post Title</div>
 			</div>
 			<div class="footer-container">
-				<div class="author-name" id="author-name">@Author</div>
-				<div class="elc">
+				<div class="author-name" id="author-name">@Author Name</div>
+				<div class="elc" id="elc">
 					EL Creative Academy
 					<div class="img-logo" style="display: none;">
 						<img src="./images/logo.png">
@@ -115,6 +117,7 @@
 			input.onkeyup = function() {
 				document.getElementById("categories").innerHTML = label1.value;
 				document.getElementById("content-title1").innerHTML = judul1.value;
+				document.getElementById("elc").innerHTML = btitle1.value;
 				document.getElementById("author-name").innerHTML = "@" + author.value;
 			};
 
