@@ -94,10 +94,6 @@
 		<a id="btn-Preview-Image" href="#">
 			Preview Image
 		</a>
-		 | 
-		<a id="btn-Convert-Html2Image" href="#"> 
-			Download Image
-		</a> 
 	</div>
 	
 	<div id="previewImage"></div> 
@@ -121,14 +117,6 @@
 						getCanvas = canvas; 
 					} 
 				}); 
-			}); 
-
-			$("#btn-Convert-Html2Image").on('click', function() { 
-				var imgageData = getCanvas.toDataURL("image/png"); 
-
-				var newData = imgageData.replace(/^data:image\/png/, "data:application/octet-stream"); 
-
-				$("#btn-Convert-Html2Image").attr("download", "elcreativethumbs.png").attr("href", newData); 
 			}); 
 
 			// Begin Here
