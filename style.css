@@ -55,7 +55,7 @@
 }
 
 #category, #bg-color, #bg-styles {
-	width: calc(99%/3);
+	width: calc(99.5%/2);
 }
 #input input {
 	width: 99.2%;

@@ -8,18 +8,6 @@
 </head>
 <body>
 	<div id="input">
-		<script type="text/javascript">
-			function elclist(json) {
-				var tag = "";
-				for (var i = 0; i < json.feed.category.length; i++) {
-					tag +=  "<option>" + json.feed.category[i].term + "</option>";
-				}
-				var list = "<select id='category' onChange='check(this);'>" + tag + "</select>";
-				
-				document.write(list); 
-			}
-		</script>
-		<script type="text/javascript" src="https://www.elcreativeacademy.com/feeds/posts/default?alt=json-in-script&callback=elclist"></script>
 		<select id='bg-color'>
 			<option disabled="disabled" selected="selected">Select Background</option>
 			<option>Red</option>
@@ -58,6 +46,7 @@
 			<option value="sty12">Background 12</option>
 			<option value="sty13">Background 13</option>
 		</select>
+		<input type="text" id="label1" placeholder="Title">
 		<br/>
 		<input type="text" id="title1" placeholder="Title">
 		<br/>
@@ -68,7 +57,7 @@
 	<div class="background" id="background">
 		<div class="content-container" >
 			<div class="header-container">
-				<div class="blocks"></div>
+				<div class="blocks" id="blocks"></div>
 				<div class="author-name" id="categories"></div>
 			</div>
 			<div class="separate">
@@ -124,6 +113,7 @@
 
 			// Keyup
 			input.onkeyup = function() {
+				document.getElementById("categories").innerHTML = label1.value;
 				document.getElementById("content-title1").innerHTML = judul1.value;
 				document.getElementById("author-name").innerHTML = "@" + author.value;
 			};
