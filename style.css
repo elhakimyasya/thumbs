@@ -1,3 +1,4 @@
+
 /* vietnamese */
 @font-face {
 	font-family: 'Quicksand';
@@ -73,16 +74,27 @@
 .background {
 	width: 900px;
 	height: 472.5px;
-	background-color: #1a73e8;
 	color: #fff;
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
 	opacity: 1;
+	visibility: visible;
+	user-select: none;
+}
+html {
+	opacity: 1
 }
 body {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	font-family: Quicksand, 'Google Sans', 'Segoe UI', sans-serif;
 }
@@ -92,8 +104,7 @@ footer.footer {
 footer.footer a {
 	font-weight: bold;
 }
-
-.background::before {
+#content-container{
 	position: absolute;
 	content: '';
 	top: 0;
@@ -101,46 +112,54 @@ footer.footer a {
 	right: 0;
 	bottom: 0;
 	z-index: -999;
-	opacity: .10;
-	background-size: 50% !important;
 }
-.background.sty1:before {
+#content-container::after {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -999;
+	opacity: .10
+}
+#content-container.sty1::after {
 	background: url(images/1.png);
 }
-.background.sty2:before {
+#content-container.sty2::after {
 	background: url(images/2.png);
 }
-.background.sty3:before {
+#content-container.sty3::after {
 	background: url(images/3.png);
 }
-.background.sty4:before {
+#content-container.sty4::after {
 	background: url(images/4.png);
 }
-.background.sty5:before {
+#content-container.sty5::after {
 	background: url(images/5.png);
 }
-.background.sty6:before {
+#content-container.sty6::after {
 	background: url(images/6.png);
 }
-.background.sty7:before {
+#content-container.sty7::after {
 	background: url(images/7.png);
 }
-.background.sty8:before {
+#content-container.sty8::after {
 	background: url(images/8.png);
 }
-.background.sty9:before {
+#content-container.sty9::after {
 	background: url(images/9.png);
 }
-.background.sty10:before {
+#content-container.sty10::after {
 	background: url(images/10.png);
 }
-.background.sty11:before {
+#content-container.sty11::after {
 	background: url(images/11.png);
 }
-.background.sty12:before {
+#content-container.sty12::after {
 	background: url(images/12.png);
 }
-.background.sty13:before {
+#content-container.sty13::after {
 	background: url(images/13.png);
 }
 
@@ -150,49 +169,82 @@ footer.footer a {
 	margin-left: 15px;
 }
 .elc {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 }
 .content-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	padding: 50px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 	height: 100%;
 	max-height: 375px;
+	color: #fff !important;
+	opacity: 1 !important;
 }
 .content-title {
 	font-size: 50px;
 	font-family: Quicksand, 'Google Sans', 'Segoe UI', sans-serif;
 	font-weight: 700;
-	padding: 0 77px;
+	padding: 0 150px;
 	text-shadow: 4px 2px 5px rgba(0,0,0,0.2);
 	max-height: 240px;
 	overflow: hidden;
+	z-index: 999;
+	opacity: 1;
+	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
 }
 .content-container .header-container {
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
 	justify-content: flex-start;
 }
 .footer-container, .header-container {
 	padding-top: 25px;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
 	flex-direction: row;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	font-family: Quicksand, 'Google Sans', 'Segoe UI', sans-serif;
 	font-size: 20px;
 	font-weight: 700;
 	text-shadow: 4px 2px 5px rgba(0,0,0,0.2);
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	z-index: 999;
 }
 .header-container {
 	padding-top: 0;
 	padding-bottom: 25px;
+	-webkit-box-pack: left;
+	-ms-flex-pack: left;
 	justify-content: left;
 }
 #categories {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	text-transform: uppercase;
 }
@@ -204,7 +256,13 @@ footer.footer a {
 	margin-right: 15px;
 }
 .separate {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
 	flex: 1;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 }
