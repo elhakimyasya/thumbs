@@ -82,9 +82,9 @@
 	</div>
 	
 	<div class="btnnn">	
-		<div id="btn-Preview-Image">
+		<a id="btn-Preview-Image" href="#previewImage">
 			Preview Image
-		</div>
+		</a>
 	</div>
 	
 	<div id="previewImage"></div> 
@@ -103,13 +103,15 @@
 			var getCanvas;  
 
 			$("#btn-Preview-Image").on('click', function() { 
+
 				html2canvas(element, { 
 					onrendered: function(canvas) { 
 						$("#previewImage").html(canvas); 
-						getCanvas = canvas;						
+						getCanvas = canvas;
+						
 					}
-				}); 				
-			}); 
+				});
+			});
 
 			// Begin Here
 			var input = document.getElementById("input"), judul1 = document.getElementById("title1"), author = document.getElementById("author"), category = document.getElementById("category"), bgcl = document.getElementById("bg-color"), backgroundSty = document.getElementById("bg-styles"), categories = document.getElementById("categories");
