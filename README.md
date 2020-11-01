@@ -1,7 +1,7 @@
 # Materia Tools
 - HTML Formatter Tool;
 - Syntax Highlighter Tool;
-- Thumbnail Generator for EL Creative Academy.
+- Thumbnail Generator.
 
 # Credits
 - [jQuery](https://github.com/jquery/jquery);
