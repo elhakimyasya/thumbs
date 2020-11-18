@@ -40,7 +40,7 @@ function code_convert1() {
   b = b.replace(/"/g, "&quot;");
   b = b.replace(/</g, "&lt;");
   b = b.replace(/>/g, "&gt;");
-  c.value = '<pre class="hl ' + d + '"><code>\n\n' + b + "\n\n</code></pre>";
+  c.value = '<pre class="hl ' + d + '"><code>\n' + b + "\n\n</code></pre>";
   c.focus();
   c.select();
 }
