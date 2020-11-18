@@ -16,7 +16,7 @@ function code_convert(c) {
   1 == document.getElementById("bq_check").checked && (a = a.replace(RegExp('<blockquote class="tr_bq( [^"]*?)?"(>|\\s[^<>]*?>)([\\s\\S]*?)<\\/blockquote>', "g"), '<blockquote class="tr_bq$1"$2$3\n</blockquote>'));
   1 == document.getElementById("str_em_check").checked && (a = a.replace(/<b>(.*?)<\/b>/gi, "<strong>$1</strong>"), a = a.replace(/<i>(.*?)<\/i>/gi, "<em>$1</em>"), a = a.replace(/style="text-align: left;"/gi, ""), a = a.replace(/style="clear: both; text-align: center;"/gi, ""), a = a.replace(/border="0" data-original-height=".*?" data-original-width=".*?"/gi, ""));
   1 == document.getElementById("img_check").checked && (a = a.replace(RegExp('<div class="separator( [^"]*?)?"(>|\\s[^<>]*?>)([\\s\\S]*?)<\\/div>', "g"), '<figure class="separator$1"$2$3\n</figure>'), a = a.replace(RegExp('<img(.*?)src="(.*?)/s(.*?)/(.*?)"(.*?)/>', "g"), '<img$1src="$2/s900/$4"$5 loading="lazy"/>'));
-  1 == document.getElementById("lnk_check").checked && (a = a.replace(/https:\/\/draft.blogger.com\/blogger.g\?blogID=4156644495655521536/gi, ""), a = a.replace(/rel='nofollow'/gi, "rel='nofollow noopener'"), a = a.replace(/rel="nofollow"/gi, "rel='nofollow noopener'"), a = a.replace('<a href=".*?" imageanchor.*?>(.*?)</a>'gi, "$1"));
+  1 == document.getElementById("lnk_check").checked && (a = a.replace(/https:\/\/draft.blogger.com\/blogger.g\?blogID=4156644495655521536/gi, ""), a = a.replace(/rel='nofollow'/gi, "rel='nofollow noopener'"), a = a.replace(/rel="nofollow"/gi, "rel='nofollow noopener'"), a = a.replace(/<a href=".*?" imageanchor.*?>(.*?)</a>/gi, "$1"));
   
 
   
