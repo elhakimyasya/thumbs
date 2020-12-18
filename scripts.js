@@ -11,7 +11,7 @@ function code_convert(c) {
   c = document.getElementById("tarea");
   var a = c.value;
   1 == document.getElementById("toc_check").checked && (a = a.replace(/(<h[1-6].*?>)\n/gi, "$1"), a = a.replace(/\n(<\/h[1-6].*?>)/gi, "$1"), a = a.replace(/<h([\d]).*?>(\n.*?\n|.*?\n|.*?|\n.*?)<\/h([\d]).*?>/gi, function (k, e, g, h) {
-    return e != h ? k : (e > b ? f += Array(e - b + 1).join("<ol>") : e < b && (f += Array(b - e + 1).join("</ol>")), xy = g.replace(/\s+/g, "_").toLowerCase(), d += 1, f += '<li><a href="#' + xy + '" title="' + g + '">' + g + "</a></li>", b = parseInt(e), "<h" + e + " id='" xy "'>" + g + "</h" + h + ">");
+    return e != h ? k : (e > b ? f += Array(e - b + 1).join("<ol>") : e < b && (f += Array(b - e + 1).join("</ol>")), xy = g.replace(/\s+/g, "_").toLowerCase(), d += 1, f += '<li><a href="' + xy + '" title="' + g + '">' + g + "</a></li>", b = parseInt(e), "<h" + e + " id='" + xy + "'>" + g + "</h" + h + ">");
   }), b && (f += Array(b - 1).join("</ol>")), a = a.replace("<b>[TOC DISINI]</b>", '<div class="elcTOC"><h2>Daftar Isi</h2><div id="elcTOC">' + f + "</ol></div></div>"), a = a.replace("<script>elcTOC();\x3c/script>", ""));
   1 == document.getElementById("bq_check").checked && (a = a.replace(RegExp('<blockquote class="tr_bq( [^"]*?)?"(>|\\s[^<>]*?>)([\\s\\S]*?)<\\/blockquote>', "g"), '<blockquote class="tr_bq$1"$2$3\n</blockquote>'));
   1 == document.getElementById("str_em_check").checked && (a = a.replace(/<b>(.*?)<\/b>/gi, "<strong>$1</strong>"), a = a.replace(/<i>(.*?)<\/i>/gi, "<em>$1</em>"), a = a.replace(/style="text-align: left;"/gi, ""), a = a.replace(/style="clear: both; text-align: center;"/gi, ""), a = a.replace(/border="0" data-original-height=".*?" data-original-width=".*?"/gi, ""));
