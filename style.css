@@ -126,7 +126,7 @@
 }
 .background {
   width: 900px;
-  height: 472px;
+  height: 506.25px;
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -135,6 +135,7 @@
   visibility: visible;
   user-select: none;
   margin: 0 auto;
+  aspect-ratio: 16/9;
 }
 html {
   opacity: 1;
