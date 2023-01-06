@@ -4,7 +4,7 @@
   "description": "Thumbnail Generator",
   "main": "scripts.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./dist/styles/styles.min.css --watch"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/elhakimyasya/thumbs/issues"
   },
-  "homepage": "https://github.com/elhakimyasya/thumbs#readme"
+  "homepage": "https://github.com/elhakimyasya/thumbs#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
 }
