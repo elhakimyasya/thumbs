@@ -14,17 +14,18 @@
                     <label for="input_background_color" class="mb-2 block text-sm font-medium text-gray-900">Background Color</label>
                     <select id="input_background_color" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
                         <option disabled selected>Choose a Background Color</option>
-                        <option value="custom">Use Custom Hex Color</option>
+                        <option value="custom">Custom Colors</option>
                         <option>Canada</option>
                         <option>France</option>
                         <option>Germany</option>
                     </select>
                     <div class="input_background_color_hex mt-4 grid grid-cols-2 gap-3">
-                        <div class="group relative z-0 mb-4 w-full">
+                        <div class="relative w-full">
                             <label for="input_hex_background_color" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Background Color (HEX)</label>
                             <input type="text" id="input_hex_background_color" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="#202124" />
+                            <div class="mt-1 text-xs text-gray-500" id="user_avatar_help">Make sure it starts with a Hashtag (#). Example: #202124.</div>
                         </div>
-                        <div class="group relative z-0 mb-4 w-full">
+                        <div class="relative w-full">
                             <label for="input_hex_text_color" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Text Color (HEX)</label>
                             <input type="text" id="input_hex_text_color" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="#202124" />
                         </div>
