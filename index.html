@@ -1,328 +1,235 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Materia Tool | EL Creative Academy</title>
-    <meta name="viewport" content="height=device-height, initial-scale=1.0" />
-    <link rel="stylesheet" href="materialize.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google%20Sans%20Text:wght@400;700&display=swap"/>
-  </head>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo center" style="font-size: 16px;">
-            Materia Tool
-          </a>
-        </div>
-      </nav>
-    </div>
+        <title>EL Creative Tools</title>
 
-    <div class="containers">
-      <div class="row">
-        <div class="col s12">
-          <ul class="tabs">
-            <li class="tab col s4"><a href="#test1">Prefixes Tool</a></li>
-            <li class="tab col s4">
-              <a class="active" href="#test2">Parse Tool</a>
-            </li>
-            <li class="tab col s4"><a href="#test3">Thumbnail Tool</a></li>
-          </ul>
-        </div>
-        <div id="test1" class="col s12">
-          <div class="col s4">
-            <p><b>Options:</b></p>
+        <meta content="EL Creative Academy, Edukasi, Tutorial, Pembelajaran, Kode, Programming, Pemrograman, CSS, Blogger, Javascript, Pemula, Cara, EL Creative, Design, Photoshop, Illustrator, How To, Linux, Edukasi, Desain Grafis, blogger, cara, " name="keywords" />
+        <meta content="EL Creative Academy, Edukasi, Tutorial, Pembelajaran, Kode, Programming, Pemrograman, CSS, Blogger, Javascript, Pemula, Cara, EL Creative, Design, Photoshop, Illustrator, How To, Linux, Edukasi, Desain Grafis, blogger, cara, " name="news_keywords" />
+        <meta content="EL Creative Academy, Edukasi, Tutorial, Pembelajaran, Kode, Programming, Pemrograman, CSS, Blogger, Javascript, Pemula, Cara, EL Creative, Design, Photoshop, Illustrator, How To, Linux, Edukasi, Desain Grafis, blogger, cara, " property="article:tag" />
+        <meta content="EL Creative Organization" name="author" />
+        <meta content="EL Creative Organization" name="copyright" />
+        <meta content="en" name="language" />
+        <meta content="https://www.elcreativeacademy.com/" name="url" />
+        <meta content="Global" name="distribution" />
+        <meta content="all" name="target" />
+        <meta content="#1962c3" name="msapplication-navbutton-color" />
+        <meta content="#1962c3" name="theme-color" />
+        <meta content="general" name="rating" />
+        <meta content="EL Creative Academy adalah media pembelajaran yang berisi tutorial, tips dan trik serta referensi yang berkaitan dengan topik Teknologi dan Informasi." name="description" />
+        <meta content="index, follow" name="robots" />
+        <meta content="index, follow" name="googlebot" />
+        <meta content="index, follow" name="googlemediabot" />
+        <meta content="index, follow" name="gulliver" />
+        <meta content="index, follow" name="slurp" />
+        <meta content="index, follow" name="fast" />
+        <meta content="index, follow" name="scooter" />
+        <meta content="index, follow" name="vscooter" />
+        <meta content="index, follow" name="ia_archiver" />
+        <meta content="index, follow" name="FAST-WebCrawler" />
+        <meta content="index, follow" name="teoma" />
+        <meta content="index, follow" name="Baiduspider" />
+        <meta content="index, follow" name="AlexaBot" />
+        <meta content="index, follow" name="Yandex" />
+        <meta content="index, follow" name="JikeSpider" />
+        <meta content="index, follow" name="naverbot" />
+        <meta content="index, follow" name="yeti" />
+        <meta content="index, follow" name="SurveyBot" />
+        <meta content="index, follow" name="ZyBorg" />
+        <meta content="index, follow" name="ArchitextSpider" />
+        <meta content="index, follow" name="msnbot-media/1.0" />
+        <meta content="index, follow" name="MSNPTC" />
+        <meta content="index, follow" name="MSNBot" />
+        <meta content="index, follow" name="bingbot" />
+        <meta content="index, follow" name="coccoc" />
+        <meta content="index, follow" name="Linespider" />
+        <meta content="https://www.elcreativeacademy.com/" property="og:url" />
+        <meta content="EL Creative Tools" property="og:site_name" />
+        <meta content="en" property="og:locale" />
+        <meta content="EL Creative Tools" property="og:title" />
+        <meta content="website" property="og:type" />
+        <meta content="website" property="og:type" />
+        <meta content="https://1.bp.blogspot.com/-5rifoQCNiEc/XZl6OC1U8uI/AAAAAAAAErU/fbYdXFwis94BMgAJcldKeniQ062pm5eFACLcBGAsYHQ/s1600/ELC.jpg" property="og:image" />
+        <meta content="https://1.bp.blogspot.com/-5rifoQCNiEc/XZl6OC1U8uI/AAAAAAAAErU/fbYdXFwis94BMgAJcldKeniQ062pm5eFACLcBGAsYHQ/s1600/ELC.jpg" name="twitter:image" />
+        <link href="https://1.bp.blogspot.com/-5rifoQCNiEc/XZl6OC1U8uI/AAAAAAAAErU/fbYdXFwis94BMgAJcldKeniQ062pm5eFACLcBGAsYHQ/s1600/ELC.jpg" rel="image_src" />
+        <meta content="EL Creative Academy adalah media pembelajaran yang berisi tutorial, tips dan trik serta referensi yang berkaitan dengan topik Teknologi dan Informasi." property="og:description" />
+        <meta content="EL Creative Academy adalah media pembelajaran yang berisi tutorial, tips dan trik serta referensi yang berkaitan dengan topik Teknologi dan Informasi." property="twitter:description" />
+        <meta content="EL Creative Tools" name="apple-mobile-web-app-title" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="yes" name="apple-touch-fullscreen" />
+        <meta content="#1962c3" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="EL Creative Tools" name="twitter:title" />
+        <meta content="https://www.elcreativeacademy.com/" name="twitter:url" />
+        <meta content="notranslate" name="google" />
+        <meta content="2175009186058023" property="fb:pages" />
+        <meta content="L3BLdlZ2dE1ZRFNYSW1vQm5PVmFWa3MzK1djMGd1UFRMTmpva3RnUE9IVT01" name="dmca-site-verification" />
+        <meta content="7BBAB61FECBD43444DD4C67893C60270" name="msvalidate.01" />
+        <meta content="da55aab7337ad4759ff4655c249f418f" name="p:domain_verify" />
+        <meta content="4Tw48A-xzkzQNOcM0f1lhXl1FLkc3JfxJF_WbTxeCq4" name="google-site-verification" />
+        <meta content="EL Creative Organization" name="author" />
+        <meta content="https://www.facebook.com/elcreativeorganization/" property="fb:profile_id" />
+        <meta content="557645748014653" property="fb:app_id" />
+        <meta content="en_US" property="og:locale:alternate" />
+        <meta content="en_GB" property="og:locale:alternate" />
+        <meta content="EL Creative Tools" property="og:site_name" />
 
-            <div style="display: flex;">
-              <span style="flex: 1 auto;">Format Blockquote Tags</span>
-              <div class="switch">
-                <label>
-                  <input id="bq_check" type="checkbox" />
-                  <span class="lever"></span>
-                </label>
-              </div>
-            </div>
-            <div style="display: flex;">
-              <span style="flex: 1 auto;">Format Image Container</span>
-              <div class="switch">
-                <label>
-                  <input type="checkbox" id="img_check" />
-                  <span class="lever"></span>
-                </label>
-              </div>
-            </div>
-            <div style="display: flex;">
-              <span style="flex: 1 auto;">Format Bold and Italic Text</span>
-              <div class="switch">
-                <label>
-                  <input type="checkbox" id="str_em_check" />
-                  <span class="lever"></span>
-                </label>
-              </div>
-            </div>
-            <div style="display: flex;">
-              <span style="flex: 1 auto;">Additional Attr Value to Links</span>
-              <div class="switch">
-                <label>
-                  <input type="checkbox" id="lnk_check" />
-                  <span class="lever"></span>
-                </label>
-              </div>
-            </div>
+        <meta content="https://www.elcreativeacademy.com/" name="twitter:domain" />
+        <link href="https://www.elcreativeacademy.com/favicon.ico" rel="apple-touch-startup-image" />
+        <link href="https://www.elcreativeacademy.com/favicon.ico" rel="apple-touch-icon" />
+        <link href="https://www.elcreativeacademy.com/favicon.ico" rel="apple-touch-icon" sizes="32x32" />
+        <link href="https://www.elcreativeacademy.com/favicon.ico" rel="shortcut icon" type="image/icon" />
+        <link href="https://www.elcreativeacademy.com/favicon.ico" rel="icon" type="image/x-icon" />
+        <link href="https://www.elcreativeacademy.com/" rel="canonical" />
+        <link href="https://www.elcreativeacademy.com/" rel="home" />
+        <link href="https://www.facebook.com/elcreativeorganization/" rel="publisher" />
+        <link href="https://www.elcreativeacademy.com/" rel="openid.delegate" />
 
-            <div style="display: flex;">
-              <span style="flex: 1 auto;">Create Table of Contents</span>
-              <div class="switch">
-                <label>
-                  <input type="checkbox" id="toc_check" />
-                  <span class="lever"></span>
-                </label>
-              </div>
-            </div>
+        <link href="//1.bp.blogspot.com" rel="dns-prefetch preconnect" />
+        <link href="//2.bp.blogspot.com" rel="dns-prefetch preconnect" />
+        <link href="//3.bp.blogspot.com" rel="dns-prefetch preconnect" />
+        <link href="//4.bp.blogspot.com" rel="dns-prefetch preconnect" />
+        <link href="//lh3.googleusercontent.com" rel="dns-prefetch preconnect" />
+        <link href="//www.blogger.com" rel="dns-prefetch preconnect" />
+        <link href="//fonts.googleapis.com" rel="dns-prefetch preconnect" />
+        <link href="//fonts.gstatic.com" rel="dns-prefetch preconnect" />
+        <link href="//resources.blogblog.com" rel="dns-prefetch preconnect" />
+        <link href="//www.facebook.com" rel="dns-prefetch preconnect" />
+        <link href="//twitter.com" rel="dns-prefetch preconnect" />
+        <link href="//www.youtube.com" rel="dns-prefetch preconnect" />
+        <link href="//www.pinterest.com" rel="dns-prefetch preconnect" />
+        <link href="//www.linkedin.com" rel="dns-prefetch preconnect" />
+        <link href="//www.behance.net" rel="dns-prefetch preconnect" />
+        <link href="//feeds.feedburner.com" rel="dns-prefetch preconnect" />
+        <link href="//github.com" rel="dns-prefetch preconnect" />
+        <link href="//apis.google.com" rel="dns-prefetch preconnect" />
+        <link href="//connect.facebook.net" rel="dns-prefetch preconnect" />
+        <link href="//cdnjs.cloudflare.com" rel="dns-prefetch preconnect" />
+        <link href="//www.google-analytics.com" rel="dns-prefetch preconnect" />
+        <link href="//pagead2.googlesyndication.com" rel="dns-prefetch preconnect" />
+        <link href="//googleads.g.doubleclick.net" rel="dns-prefetch preconnect" />
+        <link href="//www.gstatic.com" rel="dns-prefetch preconnect" />
+        <link href="//www.googletagservices.com" rel="dns-prefetch preconnect" />
+        <link href="//static.xx.fbcdn.net" rel="dns-prefetch preconnect" />
+        <link href="//tpc.googlesyndication.com" rel="dns-prefetch preconnect" />
+        <link href="//syndication.twitter.com" rel="dns-prefetch preconnect" />
 
-            <div class="input-field readalso_url" style="display: none;">
-              <input id="readalso_url" type="text" class="validate" />
-              <label class="active" for="first_name2">Blog URL</label>
-            </div>
-          </div>
-
-          <div class="col s8">
-            <div id="input">
-              <div class="input-field">
-                <textarea
-                  id="tarea"
-                  onfocus="code_check();"
-                  style="font-family: inherit;"
-                  class="materialize-textarea"
-                ></textarea>
-                <label for="textarea1">Post (HTML Format) to Prefix</label>
-              </div>
-            </div>
-
-            <div class="btnnn">
-              <button
-                id="download-image"
-                class="waves-effect waves-light btn"
-                onclick="code_convert();"
-              >
-                Prefixes
-              </button>
-
-              <button
-                id="download-image"
-                class="waves-effect waves-light btn"
-                onclick="code_clear();"
-              >
-                Clear
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="test2" class="col s12">
-          <div class="col s12">
-            <div id="input">
-              <div class="input-field">
-                <select
-                  id="lang"
-                  style="
-                    width: 100%;
-                    border: 0.0625rem solid rgb(218, 220, 224);
-                    height: 37px;
-                    line-height: 10px;
-                    outline: none;
-                    font-family: inherit;
-                  "
-                  class="validate"
-                >
-                  <option value="bash">Bash</option>
-                  <option value="cpp">C++</option>
-                  <option value="c">C</option>
-                  <option value="css">CSS</option>
-                  <option value="coffeescript">CoffeeScript</option>
-                  <option value="diff">Diff</option>
-                  <option value="go">Go</option>
-                  <option value="html">HTML / XML</option>
-                  <option value="ini">INI</option>
-                  <option value="javascript">JavaScript</option>
-                  <option value="java">Java</option>
-                  <option value="json">JSON</option>
-                  <option value="markdown">Markdown</option>
-                  <option value="objectivec">Objective C</option>
-                  <option value="python">Python</option>
-                  <option value="php">PHP</option>
-                  <option value="ruby">Ruby</option>
-                  <option value="sql">SQL</option>
-                  <option value="swift">Swift</option>
-                  <option value="typescript">TypeScript</option>
-                </select>
-              </div>
-
-              <div class="input-field">
-                <textarea
-                  class="materialize-textarea"
-                  cols="21"
-                  id="tareas"
-                  onfocus="code_check1();"
-                  rows="10"
-                  style="height: 100%; resize: none; width: 100%;"
-                ></textarea>
-              </div>
-            </div>
-
-            <div class="btnnn">
-              <button
-                id="download-image"
-                class="waves-effect waves-light btn"
-                onclick="code_convert1();"
-              >
-                Prefixes
-              </button>
-
-              <button
-                id="download-image"
-                class="waves-effect waves-light btn"
-                onclick="code_clear1();"
-              >
-                Clear
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="test3" class="col s12">
-          <div id="inputInput">
-            <div class="input-field">
-              <select id="bg-color" class="validate">
-                <option disabled>Select Background</option>
-                <option>Material Red</option>
-                <option>Material Pink</option>
-                <option>Material Purple</option>
-                <option>Material Deep Purple</option>
-                <option>Material Indigo</option>
-                <option>Material Blue</option>
-                <option>Material Light Blue</option>
-                <option>Material Cyan</option>
-                <option>Material Teal</option>
-                <option>Material Green</option>
-                <option>Material Light Green</option>
-                <option>Material Lime</option>
-                <option>Material Yellow</option>
-                <option>Material Amber</option>
-                <option>Material Orange</option>
-                <option>Material Deep Orange</option>
-                <option>Material Brown</option>
-                <option>Material Grey</option>
-                <option>Material Blue Grey</option>
-              </select>
-            </div>
-
-            <div class="input-field">
-              <select id="bg-styles" class="validate">
-                <option disabled>Select Pattern</option>
-                <option value="sty1">Background 1</option>
-                <option value="sty2">Background 2</option>
-                <option value="sty3">Background 3</option>
-                <option value="sty4">Background 4</option>
-                <option value="sty5">Background 5</option>
-                <option value="sty6">Background 6</option>
-                <option value="sty7">Background 7</option>
-                <option value="sty8">Background 8</option>
-                <option value="sty9">Background 9</option>
-                <option value="sty10">Background 10</option>
-                <option value="sty11">Background 11</option>
-                <option value="sty12">Background 12</option>
-                <option value="sty13">Background 13</option>
-              </select>
-            </div>
-
-            <br />
-
-            <div class="input-field">
-              <input type="text" id="label1" class="validate" />
-              <label for="label1">Post Label</label>
-            </div>
-
-            <div class="input-field">
-              <input type="text" id="title1Input" class="validate" />
-              <label for="title1Input">Post Title</label>
-            </div>
-
-            <div class="input-field">
-              <input type="text" id="authorInput" class="validate" />
-              <label for="authorInput">Author Name</label>
-            </div>
-
-            <div class="input-field">
-              <input type="text" id="btitle1" class="validate" />
-              <label for="btitle1">Blog Title</label>
-            </div>
-          </div>
-
-          <div class="background" id="background">
-            <div class="content-container">
-              <div class="header-container">
-                <div class="blocks" id="blocks"></div>
-                <div class="author-name" id="categories">Post Label</div>
-              </div>
-              <div class="separate">
-                <div id="content-title1" class="content-title">Post Title</div>
-              </div>
-              <div class="footer-container">
-                <div class="author-name" id="author-name">@Author Name</div>
-                <div class="elc" id="elc">
-                  EL Creative Academy
-                  <div class="img-logo" style="display: none;">
-                    <img src="./images/logo.png" alt="logo" />
-                  </div>
+        <link href="./dist/styles/styles.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="elcreative_header sticky top-0 z-30 flex min-h-[56px] w-full select-none flex-col items-center justify-center bg-white shadow-md">
+            <div class="flex min-h-[56px] w-full max-w-[58rem] items-center justify-between px-3 py-2 lg:min-h-[64px]">
+                <div class="section_start flex w-full max-w-max flex-row items-center justify-start ltr:mr-2 rtl:ml-2 lg:min-w-[200px]">
+                    <div class="widget Header flex items-center justify-center" data-version="2" id="Header1">
+                        <a class="notranslate inline-flex items-center justify-center" href="/" title="EL Creative Tools">
+                            <img alt="EL Creative Tools" class="max-h-9 w-auto flex-shrink-0 flex-grow-0 overflow-hidden indent-[-9999px] text-transparent ltr:mr-2 rtl:ml-2" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr_JCsBNcktp55hzzCIxt--wbtGe7wvNqcV-juh8G9IwQByR0Jj6sZsAJtC3wgIPUkY9eAK8TUncd3jU2fJ5uChDUWjIpQUCOTbv19sPU-MXxvhiMw8D729usm-goHaCmb5bKn5ganwUso6dFJmPpJpoPw9ZWsIcdlFY-6jKv8Yujm3bMTG0Oi0YG72g/s72/elc-cap-grey%281%29.png" width="72" height="72" />
+                            <h1 class="relative text-ellipsis text-lg font-bold line-clamp-1">EL Creative Tools</h1>
+                        </a>
+                    </div>
                 </div>
-              </div>
-
-              <div id="content-container"></div>
             </div>
-          </div>
+        </header>
+        <div class="mx-auto max-w-[58rem] p-3">
+            <form>
+                <div class="mb-4 w-full">
+                    <label for="input_background_color" class="mb-2 block text-sm font-medium text-gray-900">Background Color</label>
+                    <select id="input_background_color" autocomplete="off" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
+                        <option disabled selected>Choose a Background Color</option>
+                        <option value="custom">Custom Color (Advanced)</option>
+                        <option value="#1e3a8a">Blue 900</option>
+                        <option value="#5b21b6">Violet 800</option>
+                    </select>
+                    <div class="input_background_color_hex mt-4 hidden grid-cols-2 gap-3">
+                        <div class="relative w-full">
+                            <label for="input_hex_background_color" class="mb-2 block text-sm font-medium text-gray-900">Background Color (HEX)</label>
+                            <div class="relative">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <div class="input_hex_background_color_preview h-5 w-5 rounded-full bg-gray-600 shadow-sm"></div>
+                                </div>
+                                <input type="text" id="input_hex_background_color" class="block w-full rounded-md border border-gray-300 bg-gray-50 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 ltr:pl-10 ltr:pr-2.5 rtl:pr-10 rtl:pl-2.5" placeholder="#202124" />
+                            </div>
+                        </div>
+                        <div class="relative w-full">
+                            <label for="input_hex_text_color" class="mb-2 block text-sm font-medium text-gray-900">Text Color (HEX)</label>
+                            <div class="relative">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <div class="input_hex_text_color_preview h-5 w-5 rounded-full bg-gray-600 shadow-sm"></div>
+                                </div>
+                                <input type="text" id="input_hex_text_color" class="block w-full rounded-md border border-gray-300 bg-gray-50 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 ltr:pl-10 ltr:pr-2.5 rtl:pr-10 rtl:pl-2.5" placeholder="#202124" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-xs text-gray-500" id="user_avatar_help">If you choose the Background Color to be a Custom Color, then make sure the values for the Background Color and Text Color are HEX color codes or color names. Example: `#202124` or `red`.</div>
+                </div>
+                <!-- <div class="mb-4 w-full">
+                    <label for="input_background_image" class="mb-2 block text-sm font-medium text-gray-900">Background Image</label>
+                    <select id="input_background_image" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
+                        <option disabled selected>Choose a Background Image</option>
+                        <option>Background Image 001</option>
+                        <option>Background Image 002</option>
+                        <option>Background Image 003</option>
+                    </select>
+                </div> -->
 
-          <div class="btnnn">
-            <div id="download-images" class="waves-effect waves-light btn">
-              Download Image
+                <!-- <div class="mb-4 w-full">
+                    <label for="input_blog_url" class="mb-2 block text-sm font-medium text-gray-900">Bloger Blog URL</label>
+                    <div class="flex w-full flex-row items-center justify-center">
+                        <input type="text" id="input_blog_url" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Blog URL" />
+                        <button id="button_blog_parse" type="button" class="whitespace-nowrap rounded-md bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 ltr:ml-2 rtl:mr-2">Parse Data</button>
+                    </div>
+                </div> -->
+
+                <div class="mb-4 w-full">
+                    <label for="input_post_label" class="mb-2 block text-sm font-medium text-gray-900">Post Label</label>
+                    <input type="text" id="input_post_label" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Label" maxlength="72" required />
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_post_title" class="mb-2 block text-sm font-medium text-gray-900">Post Title</label>
+                    <textarea name="input_post_title" id="input_post_title" cols="10" rows="2" class="block w-full resize-y rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Title"></textarea>
+                    <div class="mt-2 text-xs text-gray-500" id="user_avatar_help">HTML format is Supported.</div>
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_post_author" class="mb-2 block text-sm font-medium text-gray-900">Post Author</label>
+                    <input type="text" id="input_post_author" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Author Name" maxlength="32" required />
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_blog_title" class="mb-2 block text-sm font-medium text-gray-900">Blog Name</label>
+                    <input type="text" id="input_blog_title" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Blog Name" required />
+                </div>
+            </form>
+            <h2 class="mb-2 text-lg font-bold">Render Results:</h2>
+            <div class="thumbnail_containers mb-4 overflow-x-auto overflow-y-hidden">
+                <div class="thumbnail_container relative z-10 mx-auto aspect-video h-[506.25px] w-[900px] select-none overflow-hidden bg-gray-800 text-white">
+                    <div class="flex h-full flex-col">
+                        <div class="pointer-events-none absolute top-0 flex w-full flex-row items-start justify-between px-14 pt-14 text-xl font-bold">
+                            <div class="flex flex-col items-start justify-center">
+                                <div id="post_label" class="max-w-[145px] break-words line-clamp-6 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Post Label</div>
+                                <div class="post_label_ornament mt-4 h-16 w-[2px] bg-white"></div>
+                            </div>
+                            <!-- <img id="blog_favicon" class="hidden h-4 w-4" width="16" height="16"/> -->
+                        </div>
+
+                        <div class="pointer-events-none flex flex-shrink flex-grow items-center">
+                            <div id="post_title" class="overflow-hidden text-ellipsis break-words px-52 text-[44px] font-bold leading-[1.2] line-clamp-5 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">This is an example of a Post Title with 3 lines of words. Maximum is 5 lines.</div>
+                        </div>
+
+                        <div class="pointer-events-none absolute bottom-0 flex w-full flex-row items-end justify-between px-14 pb-14 text-xl font-bold">
+                            <div id="post_author" class="max-w-[145px] break-words text-xl font-bold line-clamp-4 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Post Author Name</div>
+                            <div id="blog_title" class="flex max-w-[145px] items-center break-words text-end line-clamp-4 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Blog Name</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <button id="button_download_image" type="button" class="whitespace-nowrap rounded-md bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">Download Image</button>
         </div>
-      </div>
+    </body>
+    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- <script src="./src/assets/scripts/scripts.js"></script> -->
 
-      <footer class="footer">
-        Copyright &copy; Yasya El Hakim -
-        <a
-          href="https://www.elcreativeacademy.com/"
-          target="_blank"
-          alt="EL Creative Academy"
-        >
-          EL Creative Academy
-        </a>
-      </footer>
-    </div>
-
-    <script src="jquery-3.5.0.min.js"></script>
-    <script src="materialize.js"></script>
-    <script src="html2canvas.min.js"></script>
-    <script src="canvas2image.js"></script>
-    <script src="highligh.js"></script>
-    <script src="scripts.js"></script>
-    <script>
-      var element = $('.content-container')
-      var getCanvas
-      $('#download-images').on('click', function () {
-        html2canvas(element, {
-          onrendered: function (canvas) {
-            getCanvas = canvas
-
-            Canvas2Image.saveAsJPEG(canvas, 900, 506.25)
-          },
-        })
-
-        console.log('Downloaded')
-      })
-    </script>
-  </body>
+    <script src="./dist/scripts/bundle.js"></script>
 </html>
