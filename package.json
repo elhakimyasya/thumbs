@@ -4,7 +4,9 @@
   "description": "Thumbnail Generator",
   "main": "scripts.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./dist/styles/styles.min.css --watch"
+    "dev": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./dist/styles/styles.min.css --watch",
+    "build": "npx tailwindcss -i ./src/assets/styles/tailwind.css -o ./dist/styles/styles.min.css --minify && webpack --mode=production",
+    "webpack": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -24,10 +26,13 @@
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.2",
     "html2canvas": "^1.4.1",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "sass": "^1.57.1",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
