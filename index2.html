@@ -9,63 +9,67 @@
     </head>
     <body>
         <div class="mx-auto max-w-[58rem] p-3">
-            <div class="mb-4 w-full">
-                <label for="input_background_color" class="mb-2 block text-sm font-medium text-gray-900">Background Color</label>
-                <select id="input_background_color" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>France</option>
-                    <option>Germany</option>
-                </select>
-            </div>
-            <div class="mb-4 w-full">
-                <label for="input_background_ornament" class="mb-2 block text-sm font-medium text-gray-900">Background Ornament</label>
-                <select id="input_background_ornament" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>France</option>
-                    <option>Germany</option>
-                </select>
-            </div>
-            <div class="mb-4 w-full">
-                <label for="input_post_label" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Label</label>
-                <input type="text" id="input_post_label" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Label" required />
-            </div>
-            <div class="mb-4 w-full">
-                <label for="input_post_title" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Title</label>
-                <input type="text" id="input_post_title" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Title" required />
-            </div>
-            <div class="mb-4 w-full">
-                <label for="input_post_author" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Author</label>
-                <input type="text" id="input_post_author" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Author Name" required />
-            </div>
-            <div class="mb-4 w-full">
-                <label for="input_blog_name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Blog Name</label>
-                <input type="text" id="input_blog_name" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Blog Name" required />
-            </div>
+            <form>
+                <div class="mb-4 w-full">
+                    <label for="input_background_color" class="mb-2 block text-sm font-medium text-gray-900">Background Color</label>
+                    <select id="input_background_color" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                    </select>
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_background_ornament" class="mb-2 block text-sm font-medium text-gray-900">Background Ornament</label>
+                    <select id="input_background_ornament" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>France</option>
+                        <option>Germany</option>
+                    </select>
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_post_label" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Label</label>
+                    <input type="text" id="input_post_label" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Label" maxlength="72" required />
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_post_title" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Title</label>
+                    <input type="text" id="input_post_title" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Title" maxlength="97" required />
+                    <div class="mt-1 text-xs text-gray-500" id="user_avatar_help">Maximum Post Title is 97 characters.</div>
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_post_author" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Author</label>
+                    <input type="text" id="input_post_author" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Author Name" maxlength="32" required />
+                </div>
+                <div class="mb-4 w-full">
+                    <label for="input_blog_title" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Blog Name</label>
+                    <input type="text" id="input_blog_title" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Blog Name" required />
+                </div>
+            </form>
             <h2 class="mb-2 text-lg font-bold">Render Results:</h2>
             <div class="mb-4 overflow-x-auto overflow-y-hidden">
                 <div class="visible relative z-10 mx-auto aspect-video h-[506.25px] w-[900px] select-none overflow-hidden bg-gray-800 text-white">
                     <div class="flex h-full flex-col text-white">
                         <div class="absolute top-0 flex w-full flex-row items-start justify-between px-14 pt-14 text-xl font-bold">
-                            <div class="flex max-w-[145px] flex-col items-start justify-center">
-                                <div class="flex items-center justify-center">Google Sheet</div>
+                            <div class="flex flex-col items-start justify-center">
+                                <div id="post_label" class="max-w-[145px] line-clamp-[8]">Google Sheet</div>
                                 <div class="mt-4 h-16 w-[2px] bg-white"></div>
                             </div>
                             <div class="flex max-w-[145px] items-center">Blog Name</div>
                         </div>
 
                         <div class="flex flex-shrink flex-grow items-center">
-                            <div class="max-h-72 overflow-hidden text-ellipsis px-52 text-5xl font-bold leading-[1.2] line-clamp-5">This is An Example of Post Title with Line Clamp 4 (Ellipsis)</div>
+                            <div id="post_title" class="max-h-72 overflow-hidden text-ellipsis px-52 text-[44px] font-bold leading-[1.2] line-clamp-5">This is An Example of Post Title with 5 Line Clamp (Ellipsis)</div>
                         </div>
 
                         <div class="absolute bottom-0 flex w-full flex-row items-center justify-between px-14 pb-14 text-xl font-bold">
-                            <div class="max-w-[145px] text-xl font-bold">Yasya El Hakim</div>
-                            <div class="flex max-w-[145px] items-center text-end">EL Creative Academy</div>
+                            <div id="post_author" class="max-w-[145px] text-xl font-bold line-clamp-3">Yasya El Hakim</div>
+                            <div id="blog_title" class="flex max-w-[145px] items-center text-end">EL Creative Academy</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <script src="./src/assets/scripts/scripts.js"></script>
 </html>
