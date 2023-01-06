@@ -63,5 +63,4 @@ $("#bg-styles").change(function () {
 });
 function check(c) {
   document.getElementById("categories").innerHTML = category.options[category.selectedIndex].value;
-}
-;
+};
