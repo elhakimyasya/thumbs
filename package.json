@@ -1,0 +1,24 @@
+{
+  "name": "thumbs",
+  "version": "1.0.0",
+  "description": "Thumbnail Generator",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elhakimyasya/thumbs.git"
+  },
+  "keywords": [
+    "Thumbnail",
+    "Thumbnail",
+    "Generator"
+  ],
+  "author": "Yasya El Hakim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elhakimyasya/thumbs/issues"
+  },
+  "homepage": "https://github.com/elhakimyasya/thumbs#readme"
+}
