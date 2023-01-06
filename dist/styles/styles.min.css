@@ -566,6 +566,14 @@ video {
   height: 0.5rem;
 }
 
+.h-\[1280px\] {
+  height: 1280px;
+}
+
+.h-\[720px\] {
+  height: 720px;
+}
+
 .max-h-60 {
   max-height: 15rem;
 }
@@ -582,8 +590,20 @@ video {
   width: 4rem;
 }
 
+.w-\[720px\] {
+  width: 720px;
+}
+
+.w-\[1280px\] {
+  width: 1280px;
+}
+
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
 }
 
 .flex-shrink {
