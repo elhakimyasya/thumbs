@@ -8,7 +8,7 @@
         <link href="./dist/styles/styles.min.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="mx-auto max-w-4xl p-3">
+        <div class="mx-auto max-w-[58rem] p-3">
             <div class="mb-4 w-full">
                 <label for="input_background_color" class="mb-2 block text-sm font-medium text-gray-900">Background Color</label>
                 <select id="input_background_color" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
@@ -46,19 +46,22 @@
             <h2 class="mb-2 text-lg font-bold">Render Results:</h2>
             <div class="mb-4 overflow-x-auto overflow-y-hidden">
                 <div class="visible relative z-10 mx-auto aspect-video h-[506.25px] w-[900px] select-none overflow-hidden bg-gray-800 text-white">
-                    <div class="flex h-full flex-col p-14 text-white">
-                        <div class="flex flex-row items-center justify-start pb-6 text-xl font-bold">
-                            <div class="inline-block h-2 w-16 rounded-sm bg-white ltr:mr-4 rtl:ml-4"></div>
-                            <div class="flex items-center justify-center uppercase">POST LABEL</div>
+                    <div class="flex h-full flex-col text-white">
+                        <div class="absolute top-0 flex w-full flex-row items-start justify-between px-14 pt-14 text-xl font-bold">
+                            <div class="flex max-w-[145px] flex-col items-start justify-center">
+                                <div class="flex items-center justify-center">Google Sheet</div>
+                                <div class="mt-4 h-16 w-[2px] bg-white"></div>
+                            </div>
+                            <div class="flex max-w-[145px] items-center">Blog Name</div>
                         </div>
 
                         <div class="flex flex-shrink flex-grow items-center">
-                            <div class="max-h-60 overflow-hidden text-ellipsis px-40 text-5xl font-bold leading-[1.2] line-clamp-4">This is An Example of Post Title with Line Clamp 4 (Ellipsis)</div>
+                            <div class="max-h-72 overflow-hidden text-ellipsis px-52 text-5xl font-bold leading-[1.2] line-clamp-5">This is An Example of Post Title with Line Clamp 4 (Ellipsis)</div>
                         </div>
 
-                        <div class="flex flex-row items-center justify-between pt-6 text-xl font-bold">
-                            <div class="text-xl font-bold">Post Author Name</div>
-                            <div class="flex items-center">Blog Name</div>
+                        <div class="absolute bottom-0 flex w-full flex-row items-center justify-between px-14 pb-14 text-xl font-bold">
+                            <div class="max-w-[145px] text-xl font-bold">Yasya El Hakim</div>
+                            <div class="flex max-w-[145px] items-center text-end">EL Creative Academy</div>
                         </div>
                     </div>
                 </div>
