@@ -1,3 +1,6 @@
+const { default: Canvas2Image } = require("./canvas2image");
+const { default: html2canvas } = require("./html2canvas.min.js");
+
 const formValue = (selector, target) => {
     document.querySelector(selector).addEventListener('keyup', (event) => {
         document.querySelector(target).innerHTML = event.target.value
@@ -60,12 +63,12 @@ formValue('#input_blog_title', '#blog_title'); // Blog Title
 
 document.getElementById('button_download_image').addEventListener('click', () => {
     let getCanvas;
-    html2canvas('.thumbnail_container', {
+    html2canvas(document.querySelector('.thumbnail_container'), {
         onrendered: function (canvas) {
             getCanvas = canvas
 
             // Canvas2Image.saveAsJPEG(canvas, 1280, 720)
-            Canvas2Image.saveAsJPEG(canvas, 900, 506.25)
+            Canvas2Image.saveAsJPEG(canvas, 1280, 720)
         },
     })
 
