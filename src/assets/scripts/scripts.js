@@ -25,17 +25,46 @@ const formValue = (selector, target) => {
     })
 };
 
+const formValueColor = (selector, target, type) => {
+    document.querySelector(selector).addEventListener('keyup', (event) => {
+        if (type == 'background') {
+            document.querySelector(target).style.backgroundColor = event.target.value
+        } else if (type == 'text') {
+            document.querySelector(target).style.color = event.target.value
+        }
+    })
+}
+
+document.querySelector('#input_background_color').addEventListener('change', (event) => {
+    if (event.target.id == 'input_background_color' && event.target.value == 'custom') {
+        document.querySelector('.input_background_color_hex').classList.remove('hidden');
+        document.querySelector('.input_background_color_hex').classList.add('grid');
+
+        formValueColor('#input_hex_background_color', '.thumbnail_container', 'background');
+        formValueColor('#input_hex_text_color', '.thumbnail_container', 'text');
+
+        formValueColor('#input_hex_background_color', '.input_hex_background_color_preview', 'background');
+        formValueColor('#input_hex_text_color', '.input_hex_text_color_preview', 'background');
+        formValueColor('#input_hex_text_color', '.post_label_ornament', 'background');
+
+    } else {
+        document.querySelector('.input_background_color_hex').classList.add('hidden');
+        document.querySelector('.input_background_color_hex').classList.remove('grid');
+
+        document.querySelector('.thumbnail_container').style.backgroundColor = event.target.value;
+        document.querySelector('.thumbnail_container').style.color = '#ffffff';
+        document.querySelector('.post_label_ornament').style.backgroundColor = '#ffffff';
+
+        document.querySelector('#input_hex_background_color').value = event.target.value
+        document.querySelector('#input_hex_text_color').value = '#ffffff'
+
+        document.querySelector('.input_hex_background_color_preview').style.backgroundColor = event.target.value
+        document.querySelector('.input_hex_text_color_preview').style.backgroundColor = '#ffffff'
+    }
+});
+
 formValue('#input_post_label', '#post_label'); // Post Label
 formValue('#input_post_title', '#post_title'); // Post Title
 formValue('#input_post_author', '#post_author'); // Post Author
 formValue('#input_blog_title', '#blog_title'); // Blog Title
 
-formValue('#input_background_color', '#blog_title'); // Thumbnail Background
-
-document.querySelector('#input_background_color').addEventListener('change', (event) => {
-    if (event.target.id == 'input_background_color' && event.target.value == 'custom') {
-        document.querySelector('.input_background_color_hex').classList.remove('hidden')
-    } else {
-        document.querySelector('.input_background_color_hex').classList.add('hidden')
-    }
-});
