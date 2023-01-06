@@ -49,6 +49,15 @@
                         <option>Germany</option>
                     </select>
                 </div>
+
+                <!-- <div class="mb-4 w-full">
+                    <label for="input_blog_url" class="mb-2 block text-sm font-medium text-gray-900">Bloger Blog URL</label>
+                    <div class="flex w-full flex-row items-center justify-center">
+                        <input type="text" id="input_blog_url" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Blog URL" />
+                        <button id="button_blog_parse" type="button" class="whitespace-nowrap rounded-md bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 ltr:ml-2 rtl:mr-2">Parse Data</button>
+                    </div>
+                </div> -->
+
                 <div class="mb-4 w-full">
                     <label for="input_post_label" class="mb-2 block text-sm font-medium text-gray-900">Post Label</label>
                     <input type="text" id="input_post_label" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Label" maxlength="72" required />
@@ -76,11 +85,11 @@
                                 <div id="post_label" class="max-w-[145px] break-words line-clamp-6">Post Label</div>
                                 <div class="post_label_ornament mt-4 h-16 w-[2px] bg-white"></div>
                             </div>
-                            <div class="flex max-w-[145px] items-center break-words line-clamp-6">Blog Name</div>
+                            <!-- <img id="blog_favicon" class="hidden h-4 w-4" width="16" height="16"/> -->
                         </div>
 
                         <div class="pointer-events-none flex flex-shrink flex-grow items-center">
-                            <div id="post_title" class="overflow-hidden text-ellipsis px-52 text-[44px] font-bold leading-[1.2] line-clamp-5 break-words">This is an example of a Post Title with 3 lines of words. Maximum is 5 lines.</div>
+                            <div id="post_title" class="overflow-hidden text-ellipsis break-words px-52 text-[44px] font-bold leading-[1.2] line-clamp-5">This is an example of a Post Title with 3 lines of words. Maximum is 5 lines.</div>
                         </div>
 
                         <div class="pointer-events-none absolute bottom-0 flex w-full flex-row items-end justify-between px-14 pb-14 text-xl font-bold">

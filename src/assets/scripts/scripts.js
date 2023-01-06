@@ -18,6 +18,49 @@
 //     }
 // }
 
+// Create Element
+const functionCreateElement = (tag, options) => {
+    let element = document.createElement(tag);
+    for (var attributes in options) {
+        if (attributes == 'class') {
+            element.classList.add.apply(element.classList, options[attributes]);
+        } else if (attributes == 'content') {
+            element.innerHTML = options[attributes];
+        } else {
+            element[attributes] = options[attributes];
+        }
+    }
+
+    return element;
+};
+
+// Load Script Promise
+const functionLoadScript = (source) => {
+    return new Promise((resolve, reject) => {
+        let element = functionCreateElement('script', {
+            src: source,
+            async: true,
+            defer: true,
+        });
+
+        let boolean = false;
+        element.onload = element.onreadystatechange = function () {
+            if (!boolean && (!this.readyState || this.readyState == 'complete')) {
+                boolean = true;
+
+                resolve();
+            }
+        };
+
+        element.onerror = () => {
+            reject(element, source);
+        };
+
+        const elementScript = document.getElementsByTagName('script')[0];
+        elementScript.parentNode.insertBefore(element, elementScript);
+    });
+};
+
 
 const formValue = (selector, target) => {
     document.querySelector(selector).addEventListener('keyup', (event) => {
@@ -68,3 +111,21 @@ formValue('#input_post_title', '#post_title'); // Post Title
 formValue('#input_post_author', '#post_author'); // Post Author
 formValue('#input_blog_title', '#blog_title'); // Blog Title
 
+// Parse Favicon
+document.getElementById('button_blog_parse').addEventListener('click', () => {
+    if (document.getElementById('input_blog_url').value != '') {
+        document.getElementById('blog_favicon').setAttribute('src', `${document.getElementById('input_blog_url').value}/favicon.ico`)
+        document.getElementById('blog_favicon').classList.remove('hidden')
+    } else {
+        alert('error')
+    }
+})
+
+
+
+
+
+
+
+
+functionLoadScript('https://www.elcreativeacademy.com/' + '/feeds/posts/summary?max-results=1&alt=json-in-script&callback=elcreativeCustomWidget')
