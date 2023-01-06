@@ -6,8 +6,6 @@ module.exports = {
     mode: 'production',
     entry: {
         "bundle": [
-            // './src/assets/scripts/canvas2image.js',
-            // './src/assets/scripts/html2canvas.min.js',
             './src/assets/scripts/scripts.js',
         ]
     },
