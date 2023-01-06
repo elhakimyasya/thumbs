@@ -5,7 +5,15 @@ module.exports = {
     "./index2.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "sans": "'Google Sans Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif",
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss'),
+    require('@tailwindcss/line-clamp'),
+    require('autoprefixer'),
+  ],
 }
