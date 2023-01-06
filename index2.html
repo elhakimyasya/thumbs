@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link href="/dist/styles/styles.min.css" rel="stylesheet">
+        <link href="/dist/styles/styles.min.css" rel="stylesheet" />
     </head>
-    <body></body>
+    <body>
+        <div class="mx-auto max-w-5xl p-2">
+            <div class="mb-4">
+                <label for="input_background_color" class="mb-2 block text-sm font-medium text-gray-900">Background Color</label>
+                <select id="input_background_color" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="input_background_ornament" class="mb-2 block text-sm font-medium text-gray-900">Background Ornament</label>
+                <select id="input_background_ornament" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="input_post_label" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Label</label>
+                <input type="text" id="input_post_label" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Label" required />
+            </div>
+            <div class="mb-4">
+                <label for="input_post_title" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Title</label>
+                <input type="text" id="input_post_title" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Title" required />
+            </div>
+            <div class="mb-4">
+                <label for="input_post_author" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Post Author</label>
+                <input type="text" id="input_post_author" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Post Author Name" required />
+            </div>
+            <div class="mb-4">
+                <label for="input_blog_name" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Blog Name</label>
+                <input type="text" id="input_blog_name" class="block w-full rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Blog Name" required />
+            </div>
+        </div>
+    </body>
 </html>
