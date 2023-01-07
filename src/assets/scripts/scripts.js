@@ -1,3 +1,19 @@
+// Create Element
+const functionCreateElement = (tag, options) => {
+    let element = document.createElement(tag);
+    for (var attributes in options) {
+        if (attributes == 'class') {
+            element.classList.add.apply(element.classList, options[attributes]);
+        } else if (attributes == 'content') {
+            element.innerHTML = options[attributes];
+        } else {
+            element[attributes] = options[attributes];
+        }
+    }
+
+    return element;
+};
+
 const formValue = (selector, target) => {
     document.querySelector(selector).addEventListener('keyup', (event) => {
         document.querySelector(target).innerHTML = event.target.value
@@ -62,18 +78,15 @@ document.getElementById('button_download_image').addEventListener('click', () =>
     document.querySelector('.thumbnail_containers').classList.remove('overflow-y-hidden')
     document.querySelector('.thumbnail_containers').classList.remove('overflow-x-auto')
 
-    let getCanvas;
     html2canvas(document.querySelector('.thumbnail_container'), {
         onrendered: function (canvas) {
-            getCanvas = canvas
+            canvas.style.width = canvas.width * 4;
+            canvas.style.height = canvas.height * 4;
+            Canvas2Image.saveAsJPEG(canvas, 1280, 720, 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1)
 
 
-
-            // Canvas2Image.saveAsJPEG(canvas, 1280, 720)
-            Canvas2Image.saveAsJPEG(canvas, 1280, 720)
             document.querySelector('.thumbnail_containers').classList.add('overflow-y-hidden')
             document.querySelector('.thumbnail_containers').classList.add('overflow-x-auto')
         }
     })
-
 })
