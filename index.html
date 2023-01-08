@@ -140,29 +140,8 @@
                         <option disabled selected>Choose a Background Color</option>
                         <option value="custom">Custom Color (Advanced)</option>
 
-                        <option value="#af4448">Material Design: Red 200 - Dark</option>
-                        <option value="#b61827">Material Design: Red 400 - Dark</option>
-                        <option value="#ba000d">Material Design: Red 500 - Dark</option>
-                        <option value="#ab000d">Material Design: Red 600 - Dark</option>
-                        <option value="#d32f2f">Material Design: Red 700</option>
-                        <option value="#9a0007">Material Design: Red 700 - Dark</option>
-                        <option value="#c62828">Material Design: Red 800</option>
-                        <option value="#8e0000">Material Design: Red 800 - Dark</option>
-                        <option value="#b71c1c">Material Design: Red 900</option>
-                        <option value="#7f0000">Material Design: Red 900 - Dark</option>
-
-                        <option value="#ba2d65">Material Design: Pink 300 - Dark</option>
-                        <option value="#b4004e">Material Design: Pink 400 - Dark</option>
-                        <option value="#b0003a">Material Design: Pink 500 - Dark</option>
-                        <option value="#d81b60">Material Design: Pink 600</option>
-                        <option value="#a00037">Material Design: Pink 600 - Dark</option>
-                        <option value="#c2185b">Material Design: Pink 700</option>
-                        <option value="#8c0032">Material Design: Pink 700 - Dark</option>
-                        <option value="#ad1457">Material Design: Pink 800</option>
-                        <option value="#78002e">Material Design: Pink 800 - Dark</option>
-                        <option value="#b71c1c">Material Design: Pink 900</option>
-                        <option value="#7f0000">Material Design: Pink 900 - Dark</option>
-
+                        <option value="#c62828">Material Design Red</option>
+                        <option value="#c2185b">Material Design Pink</option>
                         <option value="#7b1fa2">Material Design Purple</option>
                         <option value="#512da8">Material Design Deep Purple</option>
                         <option value="#303f9f">Material Design Indigo</option>
@@ -203,15 +182,16 @@
                     </div>
                     <div class="mt-2 text-xs text-gray-500">If you choose the Background Color to be a Custom Color, then make sure the values for the Background Color and Text Color are HEX color codes or color names. Example: `#202124` or `red`.</div>
                 </div>
-                <!-- <div class="mb-4 w-full">
+                <div class="mb-4 w-full">
                     <label for="input_background_image" class="mb-2 block text-sm font-medium text-gray-900">Background Image</label>
                     <select id="input_background_image" class="block w-full cursor-pointer rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500">
                         <option disabled selected>Choose a Background Image</option>
-                        <option>Background Image 001</option>
-                        <option>Background Image 002</option>
-                        <option>Background Image 003</option>
+                        <option value="none">None</option>
+                        <option value="./src/assets/images/patterns/1.png">Background Image 001</option>
+                        <option value="https://previews.123rf.com/images/balabolka/balabolka1801/balabolka180100087/93150931-cartoon-cute-doodles-latin-america-seamless-pattern-colorful-detailed-with-lots-of-objects-backgroun.jpg">Background Image 002</option>
+                        <option value="./src/assets/images/patterns/1.png">Background Image 003</option>
                     </select>
-                </div> -->
+                </div>
 
                 <!-- <div class="mb-4 w-full">
                     <label for="input_blog_url" class="mb-2 block text-sm font-medium text-gray-900">Bloger Blog URL</label>
@@ -258,7 +238,7 @@
                         <div id="post_author" class="max-w-[145px] break-words text-xl font-bold leading-6 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Post Author Name</div>
                         <div id="blog_title" class="flex max-w-[145px] items-center break-words text-end leading-6 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Blog Name</div>
                     </div>
-                    <span class="absolute top-0 -z-[1] h-full w-full bg-contain opacity-25" style="background-image: url(./src/assets/images/patterns/1.png)"></span>
+                    <span class="background_image absolute top-0 -z-[1] hidden h-full w-full bg-contain opacity-25"></span>
                 </div>
             </div>
 
