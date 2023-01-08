@@ -27,6 +27,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
+    "dom-to-image": "^2.6.0",
     "html2canvas": "^1.4.1",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",

@@ -119,7 +119,7 @@
 
         <link href="./dist/styles/styles.min.css" rel="stylesheet" />
     </head>
-    <body>
+    <body class="m-0 p-0">
         <header class="elcreative_header sticky top-0 z-30 flex min-h-[56px] w-full select-none flex-col items-center justify-center bg-white shadow-md">
             <div class="flex min-h-[56px] w-full max-w-[58rem] items-center justify-between px-3 py-2 lg:min-h-[64px]">
                 <div class="section_start flex w-full max-w-max flex-row items-center justify-start ltr:mr-2 rtl:ml-2 lg:min-w-[200px]">
@@ -240,34 +240,33 @@
                 </div>
             </form>
             <h2 class="mb-2 text-lg font-bold">Render Results:</h2>
-            <div class="thumbnail_containers mb-4 overflow-x-auto overflow-y-hidden">
-                <div class="thumbnail_container relative z-10 mx-auto aspect-video h-[506.25px] w-[900px] select-none overflow-hidden bg-gray-800 text-white">
-                    <div class="flex h-full flex-col">
-                        <div class="pointer-events-none absolute top-0 flex w-full flex-row items-start justify-between px-14 pt-14 text-xl font-bold">
-                            <div class="flex flex-col items-start justify-center">
-                                <div id="post_label" class="max-w-[145px] break-words line-clamp-6 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Post Label</div>
-                                <div class="post_label_ornament mt-4 h-16 w-[2px] bg-white"></div>
-                            </div>
-                            <!-- <img id="blog_favicon" class="hidden h-4 w-4" width="16" height="16"/> -->
+            <div class="thumbnail_containers relative mb-4 overflow-x-auto overflow-y-hidden">
+                <div class="thumbnail_container relative z-10 aspect-video h-[506.25px] w-[900px] select-none justify-center overflow-hidden bg-gray-800 text-white">
+                    <div class="absolute top-0 flex w-full flex-row items-start justify-between px-14 pt-14 text-xl font-bold">
+                        <div class="flex flex-col items-start justify-center">
+                            <div id="post_label" class="max-w-[145px] break-words [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Post Label</div>
+                            <div class="post_label_ornament mt-4 h-16 w-[2px] bg-white"></div>
                         </div>
-
-                        <div class="pointer-events-none flex flex-shrink flex-grow items-center">
-                            <div id="post_title" class="overflow-hidden text-ellipsis break-words px-52 text-[44px] font-bold leading-[1.2] line-clamp-[8] [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">This is an example of a Post Title with 3 lines of words. Maximum is 5 lines.</div>
-                        </div>
-
-                        <div class="pointer-events-none absolute bottom-0 flex w-full flex-row items-end justify-between px-14 pb-14 text-xl font-bold">
-                            <div id="post_author" class="max-w-[145px] break-words text-xl font-bold line-clamp-4 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Post Author Name</div>
-                            <div id="blog_title" class="flex max-w-[145px] items-center break-words text-end line-clamp-4 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Blog Name</div>
-                        </div>
+                        <!-- <img id="blog_favicon" class="hidden h-4 w-4" width="16" height="16"/> -->
                     </div>
+
+                    <div class="flex h-full flex-shrink flex-grow items-center">
+                        <div id="post_title" class="max-h[444px] text-ellipsis break-words px-52 text-[44px] font-bold leading-[1.2] [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">This is an example of a Post Title with 4 lines of words. Maximum is 5 lines.</div>
+                    </div>
+
+                    <div class="absolute bottom-0 flex w-full flex-row items-end justify-between px-14 pb-14 text-xl font-bold">
+                        <div id="post_author" class="max-w-[145px] break-words text-xl font-bold leading-6 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Post Author Name</div>
+                        <div id="blog_title" class="flex max-w-[145px] items-center break-words text-end leading-6 [text-shadow:4px_2px_5px_rgba(0,0,0,0.2)]">Blog Name</div>
+                    </div>
+                    <span class="absolute top-0 -z-[1] h-full w-full bg-contain opacity-25" style="background-image: url(./src/assets/images/patterns/1.png)"></span>
                 </div>
             </div>
 
             <button id="button_download_image" type="button" class="whitespace-nowrap rounded-md bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300">Download Image</button>
         </div>
     </body>
-    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://superal.github.io/canvas2image/canvas2image.js"></script> -->
     <!-- <script src="./src/assets/scripts/scripts.js"></script> -->
 
     <script src="./dist/scripts/bundle.js"></script>

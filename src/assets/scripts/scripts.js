@@ -1,3 +1,5 @@
+import domtoimage from 'dom-to-image';
+
 // Create Element
 const functionCreateElement = (tag, options) => {
     let element = document.createElement(tag);
@@ -74,19 +76,28 @@ formValue('#input_blog_title', '#blog_title'); // Blog Title
 // })
 
 
+
+function save(canvas) {/*html2canvas-0.5.0 work with Promise.js*/
+    window.open(canvas.toDataURL());
+}
+
 document.getElementById('button_download_image').addEventListener('click', () => {
-    document.querySelector('.thumbnail_containers').classList.remove('overflow-y-hidden')
-    document.querySelector('.thumbnail_containers').classList.remove('overflow-x-auto')
-
-    html2canvas(document.querySelector('.thumbnail_container'), {
-        onrendered: function (canvas) {
-            canvas.style.width = canvas.width * 4;
-            canvas.style.height = canvas.height * 4;
-            Canvas2Image.saveAsJPEG(canvas, 1280, 720, 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1)
-
-
-            document.querySelector('.thumbnail_containers').classList.add('overflow-y-hidden')
-            document.querySelector('.thumbnail_containers').classList.add('overflow-x-auto')
+    var scale = 1.5;
+    domtoimage.toJpeg(document.querySelector('.thumbnail_container'), {
+        width: document.querySelector('.thumbnail_container').clientWidth * scale,
+        height: document.querySelector('.thumbnail_container').clientHeight * scale,
+        style: {
+            transform: 'scale(' + scale + ')',
+            transformOrigin: 'top left'
         }
-    })
+    }).then(function (dataUrl) {
+        const element = functionCreateElement('a', {
+            href: dataUrl,
+            download: 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1,
+        });
+        element.click();
+
+    }).catch(function (error) {
+        console.error('oops, something went wrong!', error);
+    });
 })
