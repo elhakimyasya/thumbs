@@ -119,6 +119,14 @@ document.getElementById('button_download_image').addEventListener('click', () =>
 })
 
 // Share Thumbnail
+function urltoFile(url, filename, mimeType) {
+    return (fetch(url).then(function (res) {
+        return res.arrayBuffer();
+    }).then(function (buf) {
+        return new File([buf], filename, { type: mimeType });
+    }));
+}
+
 if (navigator.canShare) {
     document.getElementById('button_share_image').addEventListener('click', () => {
         var scale = 1.5;
@@ -130,19 +138,21 @@ if (navigator.canShare) {
                 transformOrigin: 'top left'
             }
         }).then(function (dataUrl) {
+            let filez;
+            urltoFile(dataUrl, 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg').then(function (file) {
+                filez = file
+            });
 
             let filesArray = [new File([dataUrl], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
 
-            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+            if (navigator.canShare && navigator.canShare({ files: filez })) {
                 navigator.share({
-                    text: document.getElementById('input_post_title').value.trim() + "\n\Generated Thumbnail by EL Creative Tools: ",
-                    files: filesArray,
-                    title: document.getElementById('input_post_title').value.trim(),
-                    url: window.location + '\n' + 'https://www.elcreativeacademy.com/',
+                    text: "Generated Thumbnail by EL Creative Tools: \n" + window.location.href + "\n\nEL Creative Academy:\n\nhttps://www.elcreativeacademy.com/",
+                    files: filez,
+                    title: document.getElementById('post_title').textContent.trim(),
+                    url: 'https://www.elcreativeacademy.com/',
                 });
             }
-
-            console.log(filesArray)
         }).catch(function (error) {
             console.error('oops, something went wrong!', error);
         });
