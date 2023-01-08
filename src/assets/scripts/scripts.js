@@ -63,12 +63,25 @@ document.querySelector('#input_background_color').addEventListener('change', (ev
 document.querySelector('#input_background_image').addEventListener('change', (event) => {
     if (event.target.value != 'none') {
         document.querySelector('.background_image').classList.remove('hidden');
+        document.querySelector('.input_background_image_advanced').classList.remove('hidden');
+        document.querySelector('.input_background_image_advanced').classList.add('grid');
+
         document.querySelector('.background_image').setAttribute('style', `background-image: url(${event.target.value})`);
     } else {
         document.querySelector('.background_image').classList.add('hidden');
+        document.querySelector('.input_background_image_advanced').classList.add('hidden');
+        document.querySelector('.input_background_image_advanced').classList.remove('grid');
     }
 
     console.log(event.target.value)
+})
+
+document.querySelector('#image_invert').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        document.querySelector('.background_image').style.filter = event.target.value;
+    } else {
+        document.querySelector('.background_image').style.filter = '';
+    }
 })
 
 formValue('#input_post_label', '#post_label'); // Post Label
