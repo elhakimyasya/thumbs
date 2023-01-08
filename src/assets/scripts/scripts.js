@@ -119,30 +119,32 @@ document.getElementById('button_download_image').addEventListener('click', () =>
 })
 
 // Share Thumbnail
-document.getElementById('button_share_image').addEventListener('click', () => {
-    var scale = 1.5;
-    domtoimage.toJpeg(containerThumbnail, {
-        width: containerThumbnail.clientWidth * scale,
-        height: containerThumbnail.clientHeight * scale,
-        style: {
-            transform: 'scale(' + scale + ')',
-            transformOrigin: 'top left'
-        }
-    }).then(function (dataUrl) {
-        let file = new File([dataUrl], 'picture.jpg', { type: 'image/jpg' });
-        let filesArray = [file];
+if (navigator.canShare) {
+    document.getElementById('button_share_image').addEventListener('click', () => {
+        var scale = 1.5;
+        domtoimage.toJpeg(containerThumbnail, {
+            width: containerThumbnail.clientWidth * scale,
+            height: containerThumbnail.clientHeight * scale,
+            style: {
+                transform: 'scale(' + scale + ')',
+                transformOrigin: 'top left'
+            }
+        }).then(function (dataUrl) {
+            let filesArray = [new File([dataUrl], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1, { type: 'image/jpeg' })];
 
-        if (navigator.canShare && navigator.canShare({ files: filesArray })) {
-            navigator.share({
-                text: document.getElementById('input_post_title').value.trim() + "\n\Generated Thumbnail by EL Creative Tools: ",
-                files: filesArray,
-                title: document.getElementById('input_post_title').value.trim(),
-                url: window.location,
-            });
-        } else {
-            document.getElementById('button_share_image').remove()
-        }
-    }).catch(function (error) {
-        console.error('oops, something went wrong!', error);
-    });
-})
+            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+                navigator.share({
+                    text: document.getElementById('input_post_title').value.trim() + "\n\Generated Thumbnail by EL Creative Tools: ",
+                    files: filesArray,
+                    title: document.getElementById('input_post_title').value.trim(),
+                    url: window.location + '\n' + 'https://www.elcreativeacademy.com/',
+                });
+            }
+
+        }).catch(function (error) {
+            console.error('oops, something went wrong!', error);
+        });
+    })
+} else {
+    document.getElementById('button_share_image').remove()
+}
