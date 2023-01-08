@@ -71,6 +71,8 @@ document.querySelector('#input_background_image').addEventListener('change', (ev
         document.querySelector('.input_background_image_advanced').classList.add('hidden');
         document.querySelector('.input_background_image_advanced').classList.remove('grid');
     }
+
+    console.log(event.target.value)
 })
 
 // Invert Background Image
@@ -116,6 +118,30 @@ document.getElementById('button_download_image').addEventListener('click', () =>
     });
 })
 
+function b64toBlob(b64Data, contentType, sliceSize) {
+    contentType = contentType || '';
+    sliceSize = sliceSize || 512;
+
+    var byteCharacters = b64Data;
+    var byteArrays = [];
+
+    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+        var byteNumbers = new Array(slice.length);
+        for (var i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i);
+        }
+
+        var byteArray = new Uint8Array(byteNumbers);
+
+        byteArrays.push(byteArray);
+    }
+
+    var blob = new Blob(byteArrays, { type: contentType });
+    return blob;
+}
+
 if (navigator.canShare) {
     document.getElementById('button_share_image').addEventListener('click', () => {
         var scale = 1.5;
@@ -126,14 +152,25 @@ if (navigator.canShare) {
                 transform: 'scale(' + scale + ')',
                 transformOrigin: 'top left'
             }
-        }).then((dataUrl) => {
-            navigator.share({
-                text: "Generated Thumbnail by EL Creative Tools: \n" + window.location.href + "\n\nEL Creative Academy:\n\nhttps://www.elcreativeacademy.com/",
-                title: document.getElementById('post_title').textContent.trim(),
-                url: dataUrl,
-            });
+        }).then(function (dataUrl) {
+            var blob = b64toBlob(dataUrl, 'image/jpeg');
+            let file = [new File([blob], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
+            let filesArray = [file];
+
+            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+                navigator.share({
+                    text: "Generated Thumbnail by EL Creative Tools: \n" + window.location.href + "\n\nEL Creative Academy:\n\nhttps://www.elcreativeacademy.com/",
+                    files: filesArray,
+                    title: document.getElementById('input_post_title').textContent.trim(),
+                    url: 'https://www.elcreativeacademy.com/',
+                });
+            } else {
+                document.getElementById('button_share_image').remove()
+            }
+
+            console.log(dataUrl)
         }).catch(function (error) {
-            console.error('oops, something went wrong!!', error);
+            document.getElementById('button_share_image').remove()
         });
     })
 } else {
