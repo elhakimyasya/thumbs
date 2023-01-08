@@ -66,7 +66,7 @@ document.querySelector('#input_background_image').addEventListener('change', (ev
         document.querySelector('.input_background_image_advanced').classList.remove('hidden');
         document.querySelector('.input_background_image_advanced').classList.add('grid');
 
-        document.querySelector('.background_image').setAttribute('style', `background-image: url(${event.target.value})`);
+        document.querySelector('.background_image').style.backgroundImage = `url(./src/assets/images/patterns/${event.target.value}.png)`
     } else {
         document.querySelector('.background_image').classList.add('hidden');
         document.querySelector('.input_background_image_advanced').classList.add('hidden');
@@ -79,8 +79,10 @@ document.querySelector('#input_background_image').addEventListener('change', (ev
 document.querySelector('#image_invert').addEventListener('change', (event) => {
     if (event.target.checked) {
         document.querySelector('.background_image').style.filter = event.target.value;
+        document.querySelector('.background_image').style.opacity = '0.15';
     } else {
         document.querySelector('.background_image').style.filter = '';
+        document.querySelector('.background_image').style.opacity = '0.25';
     }
 })
 
