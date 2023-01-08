@@ -82,7 +82,6 @@ for (let index = 0; index < images.length; index++) {
     `
 }
 
-
 inputBackgroundImage.addEventListener('change', (event) => {
     if (event.target.value != 'none') {
         document.querySelector('.background_image').classList.remove('hidden');
