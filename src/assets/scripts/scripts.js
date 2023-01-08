@@ -58,14 +58,38 @@ inputBackgroundColor.addEventListener('change', (event) => {
     }
 });
 
+
 // Background Image
-document.querySelector('#input_background_image').addEventListener('change', (event) => {
+const images = [
+    './src/assets/images/patterns/1.png',
+    './src/assets/images/patterns/2.png',
+    './src/assets/images/patterns/3.png',
+    './src/assets/images/patterns/4.png',
+    './src/assets/images/patterns/5.png',
+    './src/assets/images/patterns/6.png',
+    './src/assets/images/patterns/7.png',
+    './src/assets/images/patterns/8.png',
+    './src/assets/images/patterns/9.png',
+    './src/assets/images/patterns/10.png',
+];
+const inputBackgroundImage = document.getElementById('input_background_image');
+
+for (let index = 0; index < images.length; index++) {
+    const element = images[index];
+
+    inputBackgroundImage.innerHTML += `
+    <option value='${element}'>Background Image ${index}</option>
+    `
+}
+
+
+inputBackgroundImage.addEventListener('change', (event) => {
     if (event.target.value != 'none') {
         document.querySelector('.background_image').classList.remove('hidden');
         document.querySelector('.input_background_image_advanced').classList.remove('hidden');
         document.querySelector('.input_background_image_advanced').classList.add('grid');
 
-        document.querySelector('.background_image').style.backgroundImage = `url(./src/assets/images/patterns/${event.target.value}.png)`
+        document.querySelector('.background_image').style.backgroundImage = `url(${event.target.value})`
     } else {
         document.querySelector('.background_image').classList.add('hidden');
         document.querySelector('.input_background_image_advanced').classList.add('hidden');
@@ -84,7 +108,7 @@ document.querySelector('#image_invert').addEventListener('change', (event) => {
         document.querySelector('.background_image').style.filter = '';
         document.querySelector('.background_image').style.opacity = '0.25';
     }
-})
+});
 
 // Post Label
 formKeyUp('#input_post_label', '#post_label', 'innerHTML');
@@ -117,62 +141,3 @@ document.getElementById('button_download_image').addEventListener('click', () =>
         console.error('oops, something went wrong!', error);
     });
 })
-
-function b64toBlob(b64Data, contentType, sliceSize) {
-    contentType = contentType || '';
-    sliceSize = sliceSize || 512;
-
-    var byteCharacters = atob(b64Data);
-    var byteArrays = [];
-
-    for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-        var slice = byteCharacters.slice(offset, offset + sliceSize);
-
-        var byteNumbers = new Array(slice.length);
-        for (var i = 0; i < slice.length; i++) {
-            byteNumbers[i] = slice.charCodeAt(i);
-        }
-
-        var byteArray = new Uint8Array(byteNumbers);
-
-        byteArrays.push(byteArray);
-    }
-
-    var blob = new Blob(byteArrays, { type: contentType });
-    return blob;
-}
-
-
-if (navigator.canShare) {
-    document.getElementById('button_share_image').addEventListener('click', async () => {
-        const scale = 1.5;
-        domtoimage.toJpeg(containerThumbnail, {
-            width: containerThumbnail.clientWidth * scale,
-            height: containerThumbnail.clientHeight * scale,
-            style: {
-                transform: 'scale(' + scale + ')',
-                transformOrigin: 'top left'
-            }
-        }).then(async function (dataUrl) {
-            const blob = await fetch(dataUrl).then(res => res.blob());
-            let file = [new File([blob], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
-            let filesArray = [file];
-
-            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
-                navigator.share({
-                    text: "Generated Thumbnail by EL Creative Tools: \n" + window.location.href + "\n\nEL Creative Academy:\n\nhttps://www.elcreativeacademy.com/",
-                    files: filesArray,
-                    title: document.getElementById('input_post_title').textContent.trim(),
-                    url: 'https://www.elcreativeacademy.com/',
-                });
-            } else {
-                document.getElementById('button_share_image').remove()
-            }
-
-        }).catch(function (error) {
-            document.getElementById('button_share_image').remove()
-        });
-    })
-} else {
-    document.getElementById('button_share_image').remove()
-}
