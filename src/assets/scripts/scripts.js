@@ -138,7 +138,7 @@ if (navigator.canShare) {
                 });
             }
         }).catch(function (error) {
-            console.error('oops, something went wrong!', error);
+            console.error('oops, something went wrong!!', error);
         });
     })
 } else {
