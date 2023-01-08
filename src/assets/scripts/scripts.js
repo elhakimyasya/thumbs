@@ -122,7 +122,7 @@ function b64toBlob(b64Data, contentType, sliceSize) {
     contentType = contentType || '';
     sliceSize = sliceSize || 512;
 
-    var byteCharacters = b64Data;
+    var byteCharacters = atob(b64Data);
     var byteArrays = [];
 
     for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
@@ -153,8 +153,7 @@ if (navigator.canShare) {
                 transformOrigin: 'top left'
             }
         }).then(function (dataUrl) {
-            var blob = b64toBlob(dataUrl, 'image/jpeg');
-            let file = [new File([blob], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
+            let file = [new File([b64toBlob(dataUrl.replace('data:image/jpeg;base64,', ''), 'image/jpeg')], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
             let filesArray = [file];
 
             if (navigator.canShare && navigator.canShare({ files: filesArray })) {
