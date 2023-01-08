@@ -133,7 +133,6 @@ if (navigator.canShare) {
             if (navigator.canShare && navigator.canShare({ files: filez })) {
                 navigator.share({
                     text: "Generated Thumbnail by EL Creative Tools: \n" + window.location.href + "\n\nEL Creative Academy:\n\nhttps://www.elcreativeacademy.com/",
-                    files: filez,
                     title: document.getElementById('post_title').textContent.trim(),
                     url: dataUrl,
                 });
