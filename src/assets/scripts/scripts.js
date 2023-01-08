@@ -16,37 +16,35 @@ const functionCreateElement = (tag, options) => {
     return element;
 };
 
-const formValue = (selector, target) => {
-    document.querySelector(selector).addEventListener('keyup', (event) => {
-        document.querySelector(target).innerHTML = event.target.value
-    })
-};
-
-const formValueColor = (selector, target, type) => {
+const formKeyUp = (selector, target, type) => {
     document.querySelector(selector).addEventListener('keyup', (event) => {
         if (type == 'background') {
             document.querySelector(target).style.backgroundColor = event.target.value
         } else if (type == 'text') {
             document.querySelector(target).style.color = event.target.value
+        } else if (type == 'innerHTML') {
+            document.querySelector(target).innerHTML = event.target.value
         }
     })
-}
+};
 
-document.querySelector('#input_background_color').addEventListener('change', (event) => {
-    if (event.target.id == 'input_background_color' && event.target.value == 'custom') {
-        document.querySelector('.input_background_color_hex').classList.remove('hidden');
-        document.querySelector('.input_background_color_hex').classList.add('grid');
+// Background Color
+const containerBackgroundColor = document.querySelector('.container_background_color');
+const inputBackgroundColor = document.getElementById('input_background_color');
+inputBackgroundColor.addEventListener('change', (event) => {
+    if (event.target.value == 'custom') {
+        containerBackgroundColor.classList.remove('hidden');
+        containerBackgroundColor.classList.add('grid');
 
-        formValueColor('#input_hex_background_color', '.thumbnail_container', 'background');
-        formValueColor('#input_hex_text_color', '.thumbnail_container', 'text');
+        formKeyUp('#input_hex_background_color', '.thumbnail_container', 'background');
+        formKeyUp('#input_hex_text_color', '.thumbnail_container', 'text');
 
-        formValueColor('#input_hex_background_color', '.input_hex_background_color_preview', 'background');
-        formValueColor('#input_hex_text_color', '.input_hex_text_color_preview', 'background');
-        formValueColor('#input_hex_text_color', '.post_label_ornament', 'background');
-
+        formKeyUp('#input_hex_background_color', '.input_hex_background_color_preview', 'background');
+        formKeyUp('#input_hex_text_color', '.input_hex_text_color_preview', 'background');
+        formKeyUp('#input_hex_text_color', '.post_label_ornament', 'background');
     } else {
-        document.querySelector('.input_background_color_hex').classList.add('hidden');
-        document.querySelector('.input_background_color_hex').classList.remove('grid');
+        containerBackgroundColor.classList.add('hidden');
+        containerBackgroundColor.classList.remove('grid');
 
         document.querySelector('.thumbnail_container').style.backgroundColor = event.target.value;
         document.querySelector('.thumbnail_container').style.color = '#ffffff';
@@ -60,6 +58,7 @@ document.querySelector('#input_background_color').addEventListener('change', (ev
     }
 });
 
+// Background Image
 document.querySelector('#input_background_image').addEventListener('change', (event) => {
     if (event.target.value != 'none') {
         document.querySelector('.background_image').classList.remove('hidden');
@@ -76,6 +75,7 @@ document.querySelector('#input_background_image').addEventListener('change', (ev
     console.log(event.target.value)
 })
 
+// Invert Background Image
 document.querySelector('#image_invert').addEventListener('change', (event) => {
     if (event.target.checked) {
         document.querySelector('.background_image').style.filter = event.target.value;
@@ -86,32 +86,22 @@ document.querySelector('#image_invert').addEventListener('change', (event) => {
     }
 })
 
-formValue('#input_post_label', '#post_label'); // Post Label
-formValue('#input_post_title', '#post_title'); // Post Title
-formValue('#input_post_author', '#post_author'); // Post Author
-formValue('#input_blog_title', '#blog_title'); // Blog Title
+// Post Label
+formKeyUp('#input_post_label', '#post_label', 'innerHTML');
+// Post Title
+formKeyUp('#input_post_title', '#post_title', 'innerHTML');
+// Post Author
+formKeyUp('#input_post_author', '#post_author', 'innerHTML');
+// Blog Title
+formKeyUp('#input_blog_title', '#blog_title', 'innerHTML');
 
-// // Parse Favicon
-// document.getElementById('button_blog_parse').addEventListener('click', () => {
-//     if (document.getElementById('input_blog_url').value != '') {
-//         document.getElementById('blog_favicon').setAttribute('src', `${document.getElementById('input_blog_url').value}/favicon.ico`)
-//         document.getElementById('blog_favicon').classList.remove('hidden')
-//     } else {
-//         alert('error')
-//     }
-// })
-
-
-
-function save(canvas) {/*html2canvas-0.5.0 work with Promise.js*/
-    window.open(canvas.toDataURL());
-}
-
+// Generate Thumbnail
+const containerThumbnail = document.querySelector('.thumbnail_container');
 document.getElementById('button_download_image').addEventListener('click', () => {
     var scale = 1.5;
-    domtoimage.toJpeg(document.querySelector('.thumbnail_container'), {
-        width: document.querySelector('.thumbnail_container').clientWidth * scale,
-        height: document.querySelector('.thumbnail_container').clientHeight * scale,
+    domtoimage.toJpeg(containerThumbnail, {
+        width: containerThumbnail.clientWidth * scale,
+        height: containerThumbnail.clientHeight * scale,
         style: {
             transform: 'scale(' + scale + ')',
             transformOrigin: 'top left'
@@ -123,6 +113,35 @@ document.getElementById('button_download_image').addEventListener('click', () =>
         });
         element.click();
 
+    }).catch(function (error) {
+        console.error('oops, something went wrong!', error);
+    });
+})
+
+// Share Thumbnail
+document.getElementById('button_share_image').addEventListener('click', () => {
+    var scale = 1.5;
+    domtoimage.toJpeg(containerThumbnail, {
+        width: containerThumbnail.clientWidth * scale,
+        height: containerThumbnail.clientHeight * scale,
+        style: {
+            transform: 'scale(' + scale + ')',
+            transformOrigin: 'top left'
+        }
+    }).then(function (dataUrl) {
+        let file = new File([dataUrl], 'picture.jpg', { type: 'image/jpeg' });
+        let filesArray = [file];
+
+        if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+            navigator.share({
+                text: document.getElementById('input_post_title').value.trim() + "\n\Generated Thumbnail by EL Creative Tools: ",
+                files: filesArray,
+                title: document.getElementById('input_post_title').value.trim(),
+                url: window.location,
+            });
+        } else {
+            document.getElementById('button_share_image').remove()
+        }
     }).catch(function (error) {
         console.error('oops, something went wrong!', error);
     });
