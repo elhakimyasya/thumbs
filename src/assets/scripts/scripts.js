@@ -71,8 +71,6 @@ document.querySelector('#input_background_image').addEventListener('change', (ev
         document.querySelector('.input_background_image_advanced').classList.add('hidden');
         document.querySelector('.input_background_image_advanced').classList.remove('grid');
     }
-
-    console.log(event.target.value)
 })
 
 // Invert Background Image
@@ -128,15 +126,12 @@ if (navigator.canShare) {
                 transform: 'scale(' + scale + ')',
                 transformOrigin: 'top left'
             }
-        }).then(function (dataUrl) {
-
-            if (navigator.canShare && navigator.canShare({ files: filez })) {
-                navigator.share({
-                    text: "Generated Thumbnail by EL Creative Tools: \n" + window.location.href + "\n\nEL Creative Academy:\n\nhttps://www.elcreativeacademy.com/",
-                    title: document.getElementById('post_title').textContent.trim(),
-                    url: dataUrl,
-                });
-            }
+        }).then((dataUrl) => {
+            navigator.share({
+                text: "Generated Thumbnail by EL Creative Tools: \n" + window.location.href + "\n\nEL Creative Academy:\n\nhttps://www.elcreativeacademy.com/",
+                title: document.getElementById('post_title').textContent.trim(),
+                url: dataUrl,
+            });
         }).catch(function (error) {
             console.error('oops, something went wrong!!', error);
         });
