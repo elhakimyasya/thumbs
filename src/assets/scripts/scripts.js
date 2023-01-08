@@ -129,7 +129,7 @@ document.getElementById('button_share_image').addEventListener('click', () => {
             transformOrigin: 'top left'
         }
     }).then(function (dataUrl) {
-        let file = new File([dataUrl], 'picture.jpg', { type: 'image/jpeg' });
+        let file = new File([dataUrl], 'picture.jpg', { type: 'image/jpg' });
         let filesArray = [file];
 
         if (navigator.canShare && navigator.canShare({ files: filesArray })) {
