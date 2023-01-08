@@ -130,7 +130,8 @@ if (navigator.canShare) {
                 transformOrigin: 'top left'
             }
         }).then(function (dataUrl) {
-            let filesArray = [new File([dataUrl], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1, { type: 'image/jpeg' })];
+
+            let filesArray = [new File([dataUrl], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
 
             if (navigator.canShare && navigator.canShare({ files: filesArray })) {
                 navigator.share({
@@ -141,6 +142,7 @@ if (navigator.canShare) {
                 });
             }
 
+            console.log(filesArray)
         }).catch(function (error) {
             console.error('oops, something went wrong!', error);
         });
