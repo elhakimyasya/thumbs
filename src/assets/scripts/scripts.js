@@ -142,9 +142,10 @@ function b64toBlob(b64Data, contentType, sliceSize) {
     return blob;
 }
 
+
 if (navigator.canShare) {
-    document.getElementById('button_share_image').addEventListener('click', () => {
-        var scale = 1.5;
+    document.getElementById('button_share_image').addEventListener('click', async () => {
+        const scale = 1.5;
         domtoimage.toJpeg(containerThumbnail, {
             width: containerThumbnail.clientWidth * scale,
             height: containerThumbnail.clientHeight * scale,
@@ -152,8 +153,9 @@ if (navigator.canShare) {
                 transform: 'scale(' + scale + ')',
                 transformOrigin: 'top left'
             }
-        }).then(function (dataUrl) {
-            let file = [new File([b64toBlob(dataUrl.replace('data:image/jpeg;base64,', ''), 'image/jpeg')], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
+        }).then(async function (dataUrl) {
+            const blob = await fetch(dataUrl).then(res => res.blob());
+            let file = [new File([blob], 'elcreative_thumbnail_' + Math.round(Math.random() * 9999) + 1 + '.jpg', { type: 'image/jpeg' })];
             let filesArray = [file];
 
             if (navigator.canShare && navigator.canShare({ files: filesArray })) {
@@ -167,7 +169,6 @@ if (navigator.canShare) {
                 document.getElementById('button_share_image').remove()
             }
 
-            console.log(dataUrl)
         }).catch(function (error) {
             document.getElementById('button_share_image').remove()
         });
